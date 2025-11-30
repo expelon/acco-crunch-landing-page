@@ -5,7 +5,7 @@ import { Poppins } from 'next/font/google';
 const poppins = Poppins({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] });
 
 export const metadata: Metadata = {
-  title: 'ConsultaPro - Business Consulting Excellence',
+  title: 'Acco Crunch - Business Consulting Excellence',
   description: 'Transform your business with strategic consulting solutions that drive growth and operational excellence.',
 };
 

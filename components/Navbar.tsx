@@ -22,8 +22,8 @@ export default function Navbar() {
         <div className="flex items-center h-20">
           <div className="flex-1">
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-[#1B263B]">
-                Acco <span className="text-[#F4C542]">Crunch</span>
+              <span className="text-2xl font-bold">
+                <span className="text-[#1B263B]">Acco</span> <span className="text-[#1B263B]">Crunch</span>
               </span>
             </Link>
           </div>

@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { ArrowRight, Users2, BadgeCheck, LineChart, Globe2, Building2, Sparkles, Eye, Target } from 'lucide-react';
+import { ArrowRight, Users2, BadgeCheck, LineChart, Globe2, Building2, Sparkles, Eye, Target, ShieldCheck, Handshake, RefreshCw, Lightbulb } from 'lucide-react';
 import Link from 'next/link';
 
 const fadeUp = {
@@ -113,7 +113,7 @@ export default function AboutPage() {
               className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md"
             >
               <Image
-                src="/about .jpg"
+                src="/about.webp"
                 alt="About Acco Crunch"
                 fill
                 priority
@@ -139,12 +139,14 @@ export default function AboutPage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            className="mt-10 grid md:grid-cols-3 gap-6"
+            className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {[
-              { icon: <BadgeCheck className="w-6 h-6 text-[#F4C542]" />, title: 'Integrity', desc: 'Transparent, compliant and client-first at every step.' },
-              { icon: <LineChart className="w-6 h-6 text-[#F4C542]" />, title: 'Rigor', desc: 'Data-driven methods and repeatable processes.' },
-              { icon: <Users2 className="w-6 h-6 text-[#F4C542]" />, title: 'Partnership', desc: 'Long-term relationships with proactive counsel.' },
+              { icon: <BadgeCheck className="w-6 h-6 text-[#F4C542]" />, title: 'Precision', desc: 'We believe every number matters. Accuracy drives decisions.' },
+              { icon: <ShieldCheck className="w-6 h-6 text-[#F4C542]" />, title: 'Ethics', desc: 'We operate with honesty, legal clarity, and confidentiality.' },
+              { icon: <Handshake className="w-6 h-6 text-[#F4C542]" />, title: 'Partnership', desc: 'We treat every business like our own. Your growth = Our growth.' },
+              { icon: <LineChart className="w-6 h-6 text-[#F4C542]" />, title: 'Insight', desc: 'We use data and market trends to predict and prevent risks.' },
+              { icon: <RefreshCw className="w-6 h-6 text-[#F4C542]" />, title: 'Evolution', desc: 'We continuously improve to match regulatory and entrepreneurial change.' },
             ].map((v) => (
               <motion.div key={v.title} variants={fadeUp} className="rounded-2xl bg-white p-6 shadow-sm">
                 <div className="w-10 h-10 rounded-xl bg-[#f5f1e6] flex items-center justify-center">{v.icon}</div>

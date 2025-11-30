@@ -19,10 +19,10 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-10 h-10 bg-[#F4C542] rounded-lg flex items-center justify-center">
-                <span className="text-[#1B263B] font-bold text-xl">C</span>
+                <span className="text-[#1B263B] font-bold text-xl">A</span>
               </div>
-              <span className="text-2xl font-bold">
-                Consulta<span className="text-[#F4C542]">Pro</span>
+              <span className="text-2xl font-bold text-white">
+                Acco <span className="text-[#F4C542]">Crunch</span>
               </span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
@@ -156,10 +156,10 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Mail size={20} className="text-[#F4C542] flex-shrink-0" />
                 <a
-                  href="mailto:info@consultapro.com"
+                  href="mailto:info@accocrunch.com"
                   className="text-gray-300 hover:text-[#F4C542] transition-colors"
                 >
-                  info@consultapro.com
+                  info@accocrunch.com
                 </a>
               </li>
             </ul>
@@ -169,7 +169,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-300 text-sm">
-              © {currentYear} ConsultaPro. All rights reserved.
+              © {currentYear} Acco Crunch. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <a

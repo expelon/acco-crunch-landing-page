@@ -281,10 +281,10 @@ export default function ContactPage() {
                         Email Address
                       </div>
                       <a
-                        href="mailto:info@consultapro.com"
+                        href="mailto:info@accocrunch.com"
                         className="text-gray-600 hover:text-[#F4C542] transition-colors"
                       >
-                        info@consultapro.com
+                        info@accocrunch.com
                       </a>
                     </div>
                   </div>

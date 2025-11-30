@@ -165,7 +165,7 @@ export const testimonials = [
     role: 'CEO',
     company: 'TechVenture Inc',
     content:
-      'ConsultaPro transformed our business strategy and helped us achieve 200% revenue growth in just 18 months. Their expertise and dedication are unmatched.',
+      'Acco Crunch transformed our business strategy and helped us achieve 200% revenue growth in just 18 months. Their expertise and dedication are unmatched.',
     rating: 5,
   },
   {
