@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { ArrowRight, Users2, BadgeCheck, LineChart, Globe2, Building2, Sparkles, Eye, Target, ShieldCheck, Handshake, RefreshCw, Lightbulb } from 'lucide-react';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -18,6 +19,7 @@ const stagger = {
 };
 
 export default function AboutPage() {
+  const [storyImgLoaded, setStoryImgLoaded] = useState(false);
   return (
     <div className="min-h-screen bg-[#f8f4e5]">
       <Navbar />
@@ -112,12 +114,16 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md"
             >
+              {!storyImgLoaded && (
+                <div className="absolute inset-0 bg-[#f5f1e6] animate-pulse" />
+              )}
               <Image
                 src="/about.webp"
                 alt="About Acco Crunch"
                 fill
                 priority
                 className="object-cover"
+                onLoadingComplete={() => setStoryImgLoaded(true)}
               />
             </motion.div>
           </div>
