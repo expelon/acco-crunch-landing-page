@@ -134,7 +134,7 @@ export default function ServicesPage() {
               className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl"
             >
               <h3 className="text-2xl font-bold mb-6">Industries We Serve</h3>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {industries.map((industry, index) => (
                   <motion.div
                     key={index}
