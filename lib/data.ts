@@ -9,40 +9,33 @@ import {
 
 export const services = [
   {
-    icon: TrendingUp,
-    title: 'Business Strategy',
-    description:
-      'Develop comprehensive strategies that align with your vision and drive sustainable growth through market analysis and competitive positioning.',
-  },
-  {
-    icon: Zap,
-    title: 'Digital Transformation',
-    description:
-      'Navigate the digital landscape with confidence through innovative technology solutions that modernize operations and enhance customer experiences.',
-  },
-  {
     icon: Target,
-    title: 'Market Analysis',
-    description:
-      'Gain actionable insights through data-driven market research, competitive intelligence, and consumer behavior analysis.',
-  },
-  {
-    icon: Users,
-    title: 'Leadership Development',
-    description:
-      'Build high-performing teams and cultivate leadership excellence through tailored development programs and organizational culture initiatives.',
-  },
-  {
-    icon: BarChart3,
-    title: 'Financial Advisory',
-    description:
-      'Optimize financial performance with expert guidance on capital allocation, risk management, and strategic financial planning.',
+    title: 'Business Registration & Advisory',
+    features: [
+      'Company Registration (Pvt Ltd, LLP, OPC, Partnership)',
+      'Business Structuring & Strategy',
+      'GST / MSME / Startup India Registration',
+      'Trademark Advisory',
+    ],
   },
   {
     icon: Shield,
-    title: 'Risk Management',
-    description:
-      'Protect your business with comprehensive risk assessment frameworks and mitigation strategies tailored to your industry.',
+    title: 'Accounting & Compliance',
+    features: [
+      'Monthly Bookkeeping',
+      'TDS, GST, Income Tax Filing',
+      'Corporate Annual Filing (ROC filings)',
+      'CFO Services for SMEs',
+    ],
+  },
+  {
+    icon: BarChart3,
+    title: 'Tax Planning & Consulting',
+    features: [
+      'Capital Structuring & Tax Strategy',
+      'Investment Advisory for Business Decision Making',
+      'International Tax & Expansion Support',
+    ],
   },
 ];
 
@@ -161,35 +154,39 @@ export const pricing = [
 
 export const testimonials = [
   {
-    name: 'Sarah Mitchell',
-    role: 'CEO',
-    company: 'TechVenture Inc',
+    name: 'Titus Gomez',
+    role: 'Client',
+    company: 'Company Registration',
     content:
-      'Acco Crunch transformed our business strategy and helped us achieve 200% revenue growth in just 18 months. Their expertise and dedication are unmatched.',
+      'They guided me through every step. I now run a fully compliant private limited company with confidence.',
     rating: 5,
   },
   {
-    name: 'Michael Chen',
-    role: 'CFO',
-    company: 'GlobalRetail Corp',
-    content:
-      'The financial advisory services provided invaluable insights that optimized our capital structure and improved our bottom line significantly.',
+    name: 'Sivakumar',
+    role: 'Client',
+    company: 'Firm Registration',
+    content: 'Accuracy & professionalism at its best.',
     rating: 5,
   },
   {
-    name: 'Emily Rodriguez',
-    role: 'Director of Operations',
-    company: 'ManuTech Solutions',
-    content:
-      'Their process optimization strategies reduced our operational costs by 35% while maintaining quality. Absolutely phenomenal results.',
+    name: 'Unni Babu',
+    role: 'Client',
+    company: 'GST Registration',
+    content: 'Their clarity and support made GST compliance simple.',
     rating: 5,
   },
   {
-    name: 'David Thompson',
-    role: 'Founder',
-    company: 'HealthCare Innovations',
-    content:
-      'From day one, the team demonstrated deep industry knowledge and provided actionable strategies that positioned us for rapid growth.',
+    name: 'Arun Bose',
+    role: 'Client',
+    company: 'Project Report',
+    content: 'Financial projection helped secure bank loan approval.',
+    rating: 5,
+  },
+  {
+    name: 'Riyas',
+    role: 'Client',
+    company: 'GST Filing',
+    content: 'Fast, error-free GST filing every month.',
     rating: 5,
   },
 ];

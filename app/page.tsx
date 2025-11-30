@@ -8,11 +8,17 @@ import SectionTitle from '@/components/SectionTitle';
 import PricingCard from '@/components/PricingCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import { services, whyChooseUs, caseStudies, pricing, testimonials } from '@/lib/data';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, CheckCircle2, BarChart3, ReceiptCent, LineChart } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { useRef } from 'react';
 
 export default function Home() {
+  const imgRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: imgRef, offset: ['start end', 'end start'] });
+  const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -97,6 +103,56 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why we're the right choice */}
+      <section className="py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="rounded-2xl bg-[#2a2a2a] text-white p-4 sm:p-6 lg:p-8 pb-6 sm:pb-10 lg:pb-12 shadow-lg"
+          >
+            <div className="rounded-xl overflow-hidden">
+              <motion.div
+                ref={imgRef}
+                className="relative w-full h-[220px] sm:h-[320px] lg:h-[420px]"
+                style={{ scale: imgScale }}
+              >
+                <Image src="/card.webp" alt="Team collaboration" fill className="object-cover" />
+              </motion.div>
+            </div>
+
+            <div className="mt-8">
+              <h3 className="text-2xl sm:text-3xl font-semibold">Why we’re the right choice</h3>
+              <div className="mt-8 grid md:grid-cols-3 gap-6 md:gap-8 md:divide-x md:divide-white/10">
+                <div className="pr-0 md:pr-8">
+                  <h4 className="text-lg font-semibold text-[#f5f1e6]">Integrated business approach</h4>
+                  <p className="mt-2 text-white/70">More than company registration—strategic planning for compliance, taxation, and business stability.</p>
+                </div>
+                <div className="px-0 md:px-8">
+                  <h4 className="text-lg font-semibold text-[#f5f1e6]">Regulation intelligence system</h4>
+                  <p className="mt-2 text-white/70">Real-time compliance insights with forward analysis to identify risks before they impact your business.</p>
+                </div>
+                <div className="pl-0 md:pl-8">
+                  <h4 className="text-lg font-semibold text-[#f5f1e6]">Transparency and accountability</h4>
+                  <p className="mt-2 text-white/70">Dedicated consultant with clear documentation and monitored KPIs to maintain full process visibility.</p>
+                </div>
+              </div>
+
+              <div className="mt-10">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 bg-white text-[#1B263B] hover:bg-[#F4C542] hover:text-[#1B263B] px-5 py-2.5 rounded-lg font-medium shadow-sm transition-colors"
+                >
+                  Book your free consultation <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
@@ -108,6 +164,16 @@ export default function Home() {
             {services.map((service, index) => (
               <ServiceCard key={index} {...service} index={index} />
             ))}
+          </div>
+
+          <div className="mt-10 flex justify-center">
+            <Link
+              href="/services"
+              className="group inline-flex items-center gap-2 bg-[#E8531A] hover:bg-[#1B263B] text-white px-7 py-[14px] rounded-xl font-normal shadow-md transition-colors duration-300 ease-out"
+            >
+              Explore more
+              <ArrowRight size={18} className="transition-transform duration-300 ease-out group-hover:translate-x-[6px] group-hover:scale-110" />
+            </Link>
           </div>
         </div>
       </section>
@@ -156,20 +222,7 @@ export default function Home() {
       </section>
 
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle
-            subtitle="Pricing Plans"
-            title="Flexible Solutions for Every Budget"
-            description="Choose a plan that fits your needs and scales with your growth."
-          />
-          <div className="grid md:grid-cols-3 gap-8 mt-16">
-            {pricing.map((plan, index) => (
-              <PricingCard key={index} {...plan} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       <section className="py-20 bg-gradient-to-br from-[#F7F7F7] to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

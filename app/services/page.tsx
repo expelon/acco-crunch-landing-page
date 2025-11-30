@@ -4,7 +4,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SectionTitle from '@/components/SectionTitle';
 import ServiceCard from '@/components/ServiceCard';
-import { services } from '@/lib/data';
+import PricingCard from '@/components/PricingCard';
+import { services, pricing } from '@/lib/data';
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
@@ -237,6 +238,22 @@ export default function ServicesPage() {
               <ArrowRight size={20} />
             </Link>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Pricing Plans moved from Home */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionTitle
+            subtitle="Pricing Plans"
+            title="Flexible Solutions for Every Budget"
+            description="Choose a plan that fits your needs and scales with your growth."
+          />
+          <div className="grid md:grid-cols-3 gap-8 mt-16">
+            {pricing.map((plan, index) => (
+              <PricingCard key={index} {...plan} index={index} />
+            ))}
+          </div>
         </div>
       </section>
 
