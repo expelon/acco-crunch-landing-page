@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
@@ -18,14 +18,16 @@ export default function Navbar() {
   return (
     <nav className="w-full z-50 bg-[#f8f4e5]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-[#1B263B]">
-              Acco <span className="text-[#F4C542]">Crunch</span>
-            </span>
-          </Link>
+        <div className="flex items-center h-20">
+          <div className="flex-1">
+            <Link href="/" className="flex items-center">
+              <span className="text-2xl font-bold text-[#1B263B]">
+                Acco <span className="text-[#F4C542]">Crunch</span>
+              </span>
+            </Link>
+          </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex flex-1 items-center justify-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -37,12 +39,20 @@ export default function Navbar() {
             ))}
           </div>
 
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-[#1B263B] p-2"
-          >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+          <div className="flex-1 flex items-center justify-end">
+            <Link
+              href="/contact"
+              className="hidden md:inline-flex items-center gap-2 rounded-lg bg-[#1B1B1B] text-white px-5 py-2.5 shadow-sm hover:bg-black transition-colors"
+            >
+              Get started <ArrowRight className="w-4 h-4" />
+            </Link>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden text-[#1B263B] p-2 ml-2"
+            >
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -65,6 +75,13 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
+              <Link
+                href="/contact"
+                onClick={() => setIsOpen(false)}
+                className="inline-flex items-center gap-2 rounded-lg bg-[#1B1B1B] text-white px-5 py-2.5 shadow-sm hover:bg-black transition-colors"
+              >
+                Get started <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </motion.div>
         )}
