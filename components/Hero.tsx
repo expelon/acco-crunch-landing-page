@@ -23,7 +23,7 @@ export default function Hero() {
                 <br className="hidden md:block" />
                 <span className="md:whitespace-nowrap">move a confident one</span>
               </h1>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-2xl lg:max-w-xl xl:max-w-lg mx-auto text-center">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-2xl lg:max-w-xl xl:max-w-lg text-left">
                 End-to-end Business Registration, Tax Advisory, Compliance & Legal Support for Startups,
                 Professionals, SMEs & Growth-Focused Companies.
               </p>
