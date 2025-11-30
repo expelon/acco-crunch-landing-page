@@ -9,7 +9,7 @@ import PricingCard from '@/components/PricingCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import { services, whyChooseUs, caseStudies, pricing, testimonials } from '@/lib/data';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, BarChart3, ReceiptCent, LineChart } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Home() {
@@ -17,6 +17,81 @@ export default function Home() {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
+
+      {/* Intro block below Hero */}
+      <section className="py-20 bg-[#f5f1e6]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <h2 className="text-3xl sm:text-4xl font-semibold text-[#1B263B] tracking-tight">
+              Your ally in smarter business decisions and sustainable growth
+            </h2>
+            <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
+              We specialize in delivering end-to-end accounting and management consulting solutions that empower
+              businesses to make smarter financial decisions and scale with confidence.
+            </p>
+
+            <div className="mt-10">
+              <Link
+                href="/about"
+                className="group inline-flex items-center gap-2 bg-[#E8531A] hover:bg-[#1B263B] text-white px-7 py-[14px] rounded-xl font-normal shadow-md transition-colors duration-300 ease-out"
+              >
+                More about us
+                <ArrowRight size={18} className="transition-transform duration-300 ease-out group-hover:translate-x-[6px] group-hover:scale-110" />
+              </Link>
+            </div>
+          </motion.div>
+
+          <div className="mt-12 grid md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0 * 0.1 }}
+              viewport={{ once: true }}
+              className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+            >
+              <div className="w-16 h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <BarChart3 size={32} className="text-[#F4C542]" />
+              </div>
+              <h3 className="text-2xl font-bold text-[#1B263B] mb-4 group-hover:text-[#F4C542] transition-colors">Improved financial clarity</h3>
+              <p className="text-gray-600 leading-relaxed">Get accurate, up-to-date financial insights for confident decision-making.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1 * 0.1 }}
+              viewport={{ once: true }}
+              className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+            >
+              <div className="w-16 h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <ReceiptCent size={32} className="text-[#F4C542]" />
+              </div>
+              <h3 className="text-2xl font-bold text-[#1B263B] mb-4 group-hover:text-[#F4C542] transition-colors">Optimized tax efficiency</h3>
+              <p className="text-gray-600 leading-relaxed">Minimize your tax burden with proactive planning and compliance.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 2 * 0.1 }}
+              viewport={{ once: true }}
+              className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+            >
+              <div className="w-16 h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <LineChart size={32} className="text-[#F4C542]" />
+              </div>
+              <h3 className="text-2xl font-bold text-[#1B263B] mb-4 group-hover:text-[#F4C542] transition-colors">Smarter business decisions</h3>
+              <p className="text-gray-600 leading-relaxed">Make strategic moves backed by expert analysis and forecasting.</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,46 +151,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-[#F7F7F7]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle
-            subtitle="Case Studies"
-            title="Proven Results Across Industries"
-            description="Discover how we've helped organizations achieve transformational outcomes."
-          />
-          <div className="grid md:grid-cols-2 gap-8 mt-16">
-            {caseStudies.map((study, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
-              >
-                <div className="bg-gradient-to-br from-[#1B263B] to-[#2D3E5F] h-48 flex items-center justify-center text-7xl">
-                  {study.image}
-                </div>
-                <div className="p-8">
-                  <div className="inline-block bg-[#F4C542]/10 text-[#1B263B] px-3 py-1 rounded-full text-sm font-semibold mb-4">
-                    {study.category}
-                  </div>
-                  <h3 className="text-2xl font-bold text-[#1B263B] mb-3 group-hover:text-[#F4C542] transition-colors">
-                    {study.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">{study.description}</p>
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-                    <span className="text-[#F4C542] font-bold text-lg">
-                      {study.results}
-                    </span>
-                    <ArrowRight className="text-[#1B263B] group-hover:translate-x-2 transition-transform" />
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

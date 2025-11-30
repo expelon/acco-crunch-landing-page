@@ -19,12 +19,9 @@ export default function Navbar() {
     <nav className="w-full z-50 bg-[#f8f4e5]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#1B263B] to-[#2D3E5F] rounded-lg flex items-center justify-center">
-              <span className="text-[#F4C542] font-bold text-xl">C</span>
-            </div>
+          <Link href="/" className="flex items-center">
             <span className="text-2xl font-bold text-[#1B263B]">
-              Consulta<span className="text-[#F4C542]">Pro</span>
+              Acco <span className="text-[#F4C542]">Crunch</span>
             </span>
           </Link>
 
@@ -38,12 +35,6 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Link
-              href="/contact"
-              className="bg-[#F4C542] text-[#1B263B] px-6 py-3 rounded-lg font-semibold hover:bg-[#e5b835] transition-all duration-300 hover:scale-105"
-            >
-              Get Started
-            </Link>
           </div>
 
           <button
@@ -74,13 +65,6 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <Link
-                href="/contact"
-                onClick={() => setIsOpen(false)}
-                className="block bg-[#F4C542] text-[#1B263B] px-6 py-3 rounded-lg font-semibold text-center hover:bg-[#e5b835] transition-all duration-300"
-              >
-                Get Started
-              </Link>
             </div>
           </motion.div>
         )}
