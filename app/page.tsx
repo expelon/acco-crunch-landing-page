@@ -29,12 +29,16 @@ export default function Home() {
             className="max-w-4xl mx-auto text-center"
           >
             <h2 className="text-3xl sm:text-4xl font-semibold text-[#1B263B] tracking-tight">
-              Your ally in smarter business decisions and sustainable growth
+              Strategic expertise for confident decisions and assured, sustainable business scaling.
             </h2>
             <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
-              We specialize in delivering end-to-end accounting and management consulting solutions that empower
-              businesses to make smarter financial decisions and scale with confidence.
+              Acco Crunch, a proactive business consultancy, helps organizations build strong foundations with strategic expertise in taxation, incorporation, legal compliance, accounting, and structuring.
             </p>
+
+            <div className="mt-6 max-w-3xl mx-auto text-center text-gray-700">
+              <p className="italic">“Good accounting builds business history. Strategic advisory builds business legacy.”</p>
+              <p className="mt-2 font-medium">- Jaison Mullukattil</p>
+            </div>
 
             <div className="mt-10">
               <Link
