@@ -12,12 +12,39 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, CheckCircle2, BarChart3, ReceiptCent, LineChart } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Home() {
   const imgRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: imgRef, offset: ['start end', 'end start'] });
   const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+
+  // Responsive animation tuning for small screens
+  const [isSmall, setIsSmall] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 640px)');
+    const onChange = (e: MediaQueryListEvent) => setIsSmall(e.matches);
+    setIsSmall(mq.matches);
+    mq.addEventListener?.('change', onChange);
+    return () => mq.removeEventListener?.('change', onChange);
+  }, []);
+
+  const stagger = isSmall ? 0.28 : 0.22;
+  const headY = isSmall ? 72 : 60;
+  const paraY = isSmall ? 64 : 52;
+  const btnY = isSmall ? 48 : 40;
+  const quoteY = isSmall ? 96 : 80;
+
+  const headDur = isSmall ? 1.1 : 0.9;
+  const paraDur = isSmall ? 1.05 : 0.9;
+  const btnDur = isSmall ? 1.0 : 0.8;
+  const quoteDur = isSmall ? 1.1 : 0.85;
+
+  const btnDelay = isSmall ? 0.18 : 0.12;
+  const quoteDelay = isSmall ? 0.42 : 0.32; // ensure quote starts after button
+
+  // Trigger earlier on desktop, a bit later on small screens
+  const viewportAmount = isSmall ? 0.5 : 0.35;
 
   return (
     <div className="min-h-screen">
@@ -28,25 +55,37 @@ export default function Home() {
       <section className="py-20 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: viewportAmount }}
+            variants={{ show: { transition: { staggerChildren: stagger } } }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h2 className="text-3xl sm:text-4xl font-semibold text-[#1B263B] tracking-tight">
+            <motion.h2
+              variants={{ hidden: { opacity: 0, y: headY }, show: { opacity: 1, y: 0, transition: { duration: headDur, ease: [0.16, 1, 0.3, 1] } } }}
+              className="text-3xl sm:text-4xl font-semibold text-[#1B263B] tracking-tight"
+            >
               Strategic expertise for confident decisions and assured, sustainable business scaling.
-            </h2>
-            <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
+            </motion.h2>
+            <motion.p
+              variants={{ hidden: { opacity: 0, y: paraY }, show: { opacity: 1, y: 0, transition: { duration: paraDur, ease: [0.16, 1, 0.3, 1] } } }}
+              className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed"
+            >
               Acco Crunch, a proactive business consultancy, helps organizations build strong foundations with strategic expertise in taxation, incorporation, legal compliance, accounting, and structuring.
-            </p>
+            </motion.p>
 
-            <div className="mt-6 max-w-3xl mx-auto text-center text-gray-700">
+            <motion.div
+              variants={{ hidden: { opacity: 0, y: quoteY }, show: { opacity: 1, y: 0, transition: { duration: quoteDur, ease: [0.16, 1, 0.3, 1], delay: quoteDelay } } }}
+              className="mt-6 max-w-3xl mx-auto text-center text-gray-700"
+            >
               <p className="italic">“Good accounting builds business history. Strategic advisory builds business legacy.”</p>
               <p className="mt-2 font-medium">- Jaison Mullukattil</p>
-            </div>
+            </motion.div>
 
-            <div className="mt-10">
+            <motion.div
+              variants={{ hidden: { opacity: 0, y: btnY }, show: { opacity: 1, y: 0, transition: { duration: btnDur, ease: [0.16, 1, 0.3, 1], delay: btnDelay } } }}
+              className="mt-10"
+            >
               <Link
                 href="/about"
                 className="group inline-flex items-center gap-2 bg-[#E8531A] hover:bg-[#1B263B] text-white px-7 py-[14px] rounded-xl font-normal shadow-md transition-colors duration-300 ease-out"
@@ -54,15 +93,11 @@ export default function Home() {
                 More about us
                 <ArrowRight size={18} className="transition-transform duration-300 ease-out group-hover:translate-x-[6px] group-hover:scale-110" />
               </Link>
-            </div>
+            </motion.div>
           </motion.div>
 
           <div className="mt-12 grid md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0 * 0.1 }}
-              viewport={{ once: true }}
+            <div
               className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
             >
               <div className="w-16 h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -70,13 +105,9 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold text-[#1B263B] mb-4 group-hover:text-[#F4C542] transition-colors">Improved financial clarity</h3>
               <p className="text-gray-600 leading-relaxed">Get accurate, up-to-date financial insights for confident decision-making.</p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 1 * 0.1 }}
-              viewport={{ once: true }}
+            <div
               className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
             >
               <div className="w-16 h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -84,13 +115,9 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold text-[#1B263B] mb-4 group-hover:text-[#F4C542] transition-colors">Optimized tax efficiency</h3>
               <p className="text-gray-600 leading-relaxed">Minimize your tax burden with proactive planning and compliance.</p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 2 * 0.1 }}
-              viewport={{ once: true }}
+            <div
               className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
             >
               <div className="w-16 h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -98,7 +125,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold text-[#1B263B] mb-4 group-hover:text-[#F4C542] transition-colors">Smarter business decisions</h3>
               <p className="text-gray-600 leading-relaxed">Make strategic moves backed by expert analysis and forecasting.</p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -124,30 +151,65 @@ export default function Home() {
             </div>
 
             <div className="mt-8">
-              <h3 className="text-2xl sm:text-3xl font-semibold">Why we’re the right choice</h3>
-              <div className="mt-8 grid md:grid-cols-3 gap-6 md:gap-8 md:divide-x md:divide-white/10">
-                <div className="pr-0 md:pr-8">
+              <motion.h3
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
+                viewport={{ once: true }}
+                className="text-2xl sm:text-3xl font-semibold"
+              >
+                Why we’re the right choice
+              </motion.h3>
+
+              <div className="mt-10 md:mt-12 grid md:grid-cols-3 gap-6 md:gap-8 md:divide-x md:divide-white/10">
+                <motion.div
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="pr-0 md:pr-8"
+                >
                   <h4 className="text-lg font-semibold text-[#f5f1e6]">Integrated business approach</h4>
                   <p className="mt-2 text-white/70">More than company registration—strategic planning for compliance, taxation, and business stability.</p>
-                </div>
-                <div className="px-0 md:px-8">
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: 'easeOut', delay: 0.35 }}
+                  viewport={{ once: true }}
+                  className="px-0 md:px-8"
+                >
                   <h4 className="text-lg font-semibold text-[#f5f1e6]">Regulation intelligence system</h4>
                   <p className="mt-2 text-white/70">Real-time compliance insights with forward analysis to identify risks before they impact your business.</p>
-                </div>
-                <div className="pl-0 md:pl-8">
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: 'easeOut', delay: 0.5 }}
+                  viewport={{ once: true }}
+                  className="pl-0 md:pl-8"
+                >
                   <h4 className="text-lg font-semibold text-[#f5f1e6]">Transparency and accountability</h4>
                   <p className="mt-2 text-white/70">Dedicated consultant with clear documentation and monitored KPIs to maintain full process visibility.</p>
-                </div>
+                </motion.div>
               </div>
 
-              <div className="mt-10">
+              <motion.div
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
+                viewport={{ once: true }}
+                className="mt-12 md:mt-14"
+              >
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 bg-white text-[#1B263B] hover:bg-[#F4C542] hover:text-[#1B263B] px-5 py-2.5 rounded-lg font-medium shadow-sm transition-colors"
                 >
                   Book your free consultation <ArrowRight size={18} />
                 </Link>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
