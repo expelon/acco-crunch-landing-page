@@ -107,8 +107,8 @@ export default function Home() {
               <div className="w-16 h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-6">
                 <BarChart3 size={32} className="text-[#F4C542]" />
               </div>
-              <h3 className="text-2xl font-bold text-[#1B263B] mb-4">Improved financial clarity</h3>
-              <p className="text-gray-600 leading-relaxed">Get accurate, up-to-date financial insights for confident decision-making.</p>
+              <h3 className="text-2xl font-bold text-[#1B263B] mb-4">Precision-Led Advisory Excellence</h3>
+              <p className="text-gray-600 leading-relaxed">Delivering expert insights powered by up-to-date regulatory intelligence for assured decision-making.</p>
             </motion.div>
 
             <motion.div
@@ -121,8 +121,8 @@ export default function Home() {
               <div className="w-16 h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-6">
                 <ReceiptCent size={32} className="text-[#F4C542]" />
               </div>
-              <h3 className="text-2xl font-bold text-[#1B263B] mb-4">Optimized tax efficiency</h3>
-              <p className="text-gray-600 leading-relaxed">Minimize your tax burden with proactive planning and compliance.</p>
+              <h3 className="text-2xl font-bold text-[#1B263B] mb-4">Strategic Multi-Specialist Expertise</h3>
+              <p className="text-gray-600 leading-relaxed">Comprehensive guidance across tax, legal, accounting, and business strategy to drive stronger business outcomes.</p>
             </motion.div>
 
             <motion.div
@@ -135,8 +135,8 @@ export default function Home() {
               <div className="w-16 h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-6">
                 <LineChart size={32} className="text-[#F4C542]" />
               </div>
-              <h3 className="text-2xl font-bold text-[#1B263B] mb-4">Smarter business decisions</h3>
-              <p className="text-gray-600 leading-relaxed">Make strategic moves backed by expert analysis and forecasting.</p>
+              <h3 className="text-2xl font-bold text-[#1B263B] mb-4">Efficient Client Governance</h3>
+              <p className="text-gray-600 leading-relaxed">Structured portfolio management with transparency, strong data protection, and immediate compliance adoption.</p>
             </motion.div>
           </div>
         </div>
