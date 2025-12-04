@@ -88,7 +88,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="h-1 md:h-2 lg:h-3 bg-inherit"></div>
-            <div className="mt-0 rounded-xl bg-[#FFEB99] px-6 pt-6 pb-8 sm:pt-8 sm:pb-10 lg:pt-10 lg:pb-14">
+            <div className="mt-2 sm:mt-0 rounded-xl bg-[#FFEB99] px-6 pt-6 pb-8 sm:pt-8 sm:pb-10 lg:pt-10 lg:pb-14">
               <div className="grid grid-cols-3 gap-8 text-left items-start">
                 <div className="space-y-1">
                   <div className="text-xl sm:text-2xl font-semibold text-black leading-none">

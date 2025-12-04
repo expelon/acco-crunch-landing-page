@@ -97,35 +97,47 @@ export default function Home() {
           </motion.div>
 
           <div className="mt-12 grid md:grid-cols-3 gap-8">
-            <div
-              className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
             >
-              <div className="w-16 h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-6">
                 <BarChart3 size={32} className="text-[#F4C542]" />
               </div>
-              <h3 className="text-2xl font-bold text-[#1B263B] mb-4 group-hover:text-[#F4C542] transition-colors">Improved financial clarity</h3>
+              <h3 className="text-2xl font-bold text-[#1B263B] mb-4">Improved financial clarity</h3>
               <p className="text-gray-600 leading-relaxed">Get accurate, up-to-date financial insights for confident decision-making.</p>
-            </div>
+            </motion.div>
 
-            <div
-              className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
             >
-              <div className="w-16 h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-6">
                 <ReceiptCent size={32} className="text-[#F4C542]" />
               </div>
-              <h3 className="text-2xl font-bold text-[#1B263B] mb-4 group-hover:text-[#F4C542] transition-colors">Optimized tax efficiency</h3>
+              <h3 className="text-2xl font-bold text-[#1B263B] mb-4">Optimized tax efficiency</h3>
               <p className="text-gray-600 leading-relaxed">Minimize your tax burden with proactive planning and compliance.</p>
-            </div>
+            </motion.div>
 
-            <div
-              className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
             >
-              <div className="w-16 h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-6">
                 <LineChart size={32} className="text-[#F4C542]" />
               </div>
-              <h3 className="text-2xl font-bold text-[#1B263B] mb-4 group-hover:text-[#F4C542] transition-colors">Smarter business decisions</h3>
+              <h3 className="text-2xl font-bold text-[#1B263B] mb-4">Smarter business decisions</h3>
               <p className="text-gray-600 leading-relaxed">Make strategic moves backed by expert analysis and forecasting.</p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
