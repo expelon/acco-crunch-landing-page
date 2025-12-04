@@ -3,7 +3,7 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Metrics from '@/components/Metrics';
-import { motion } from 'framer-motion';
+import { motion, easeOut } from 'framer-motion';
 import Image from 'next/image';
 import { ArrowRight, Users2, BadgeCheck, LineChart, Globe2, Building2, Sparkles, Eye, Target, ShieldCheck, Handshake, RefreshCw, Lightbulb } from 'lucide-react';
 import Link from 'next/link';
@@ -28,7 +28,7 @@ const heroLeft = {
     y: 0,
     transition: {
       duration: 0.9,
-      ease: [0.16, 1, 0.3, 1],
+      ease: easeOut,
     },
   },
 };
@@ -40,7 +40,7 @@ const heroRight = {
     y: 0,
     transition: {
       duration: 1.0,
-      ease: [0.16, 1, 0.3, 1],
+      ease: easeOut,
       delay: 0.12,
     },
   },
