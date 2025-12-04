@@ -47,7 +47,7 @@ export default function Home() {
   const viewportAmount = isSmall ? 0.5 : 0.35;
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#f5f1e6]">
       <Navbar />
       <Hero />
 
@@ -215,7 +215,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
             subtitle="Our Services"
@@ -240,7 +240,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-[#1B263B] to-[#2D3E5F] text-white">
+      <section className="py-20 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <motion.div
@@ -252,10 +252,10 @@ export default function Home() {
               <div className="inline-block bg-[#F4C542]/20 text-[#F4C542] px-4 py-2 rounded-full text-sm font-semibold mb-4">
                 Why Choose Us
               </div>
-              <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+              <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-[#1B263B]">
                 Excellence in Every Engagement
               </h2>
-              <p className="text-xl text-gray-300 leading-relaxed">
+              <p className="text-xl text-gray-700 leading-relaxed">
                 Partner with a team that combines strategic thinking, industry expertise,
                 and a commitment to your success.
               </p>
@@ -274,9 +274,9 @@ export default function Home() {
                 <div className="text-5xl font-bold text-[#F4C542] mb-2">
                   {item.stat}
                 </div>
-                <div className="text-gray-300 mb-4">{item.label}</div>
-                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                <p className="text-gray-300">{item.description}</p>
+                <div className="text-gray-700 mb-4">{item.label}</div>
+                <h3 className="text-xl font-bold mb-3 text-[#1B263B]">{item.title}</h3>
+                <p className="text-gray-700">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -286,7 +286,7 @@ export default function Home() {
 
       
 
-      <section className="py-20 bg-gradient-to-br from-[#F7F7F7] to-white">
+      <section className="py-20 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
             subtitle="Testimonials"
@@ -301,7 +301,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-[#1B263B] to-[#2D3E5F] text-white">
+      <section className="py-20 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -310,10 +310,10 @@ export default function Home() {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-[#1B263B]">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
               Let's discuss how our consulting expertise can help you achieve your
               strategic goals and unlock new opportunities for growth.
             </p>
@@ -330,23 +330,23 @@ export default function Home() {
               </Link>
               <a
                 href="tel:+15551234567"
-                className="bg-white/10 text-white px-8 py-4 rounded-lg font-semibold border-2 border-white hover:bg-white hover:text-[#1B263B] transition-all duration-300"
+                className="text-[#1B263B] px-8 py-4 rounded-lg font-semibold border-2 border-[#1B263B] hover:bg-[#1B263B] hover:text-white transition-all duration-300"
               >
                 Call: +1 (555) 123-4567
               </a>
             </div>
-            <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-white/20">
+            <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-[#1B263B]/20">
               <div>
                 <CheckCircle2 className="w-12 h-12 text-[#F4C542] mx-auto mb-3" />
-                <div className="font-semibold">Free Consultation</div>
+                <div className="font-semibold text-[#1B263B]">Free Consultation</div>
               </div>
               <div>
                 <CheckCircle2 className="w-12 h-12 text-[#F4C542] mx-auto mb-3" />
-                <div className="font-semibold">No Long-term Contracts</div>
+                <div className="font-semibold text-[#1B263B]">No Long-term Contracts</div>
               </div>
               <div>
                 <CheckCircle2 className="w-12 h-12 text-[#F4C542] mx-auto mb-3" />
-                <div className="font-semibold">Satisfaction Guaranteed</div>
+                <div className="font-semibold text-[#1B263B]">Satisfaction Guaranteed</div>
               </div>
             </div>
           </motion.div>

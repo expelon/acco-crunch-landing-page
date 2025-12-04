@@ -45,7 +45,7 @@ export default function ContactPage() {
     <div className="min-h-screen">
       <Navbar />
 
-      <section className="pt-32 pb-20 bg-gradient-to-br from-[#F7F7F7] to-white">
+      <section className="pt-32 pb-20 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -68,7 +68,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
             <div className="lg:col-span-2">
@@ -295,21 +295,21 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-gradient-to-br from-[#1B263B] to-[#2D3E5F] p-8 rounded-2xl text-white"
+                className="bg-white p-8 rounded-2xl border border-gray-200 text-[#1B263B]"
               >
-                <h3 className="text-2xl font-bold mb-4">Office Hours</h3>
+                <h3 className="text-2xl font-bold mb-4 text-[#1B263B]">Office Hours</h3>
                 <div className="space-y-3">
                   <div className="flex justify-between">
-                    <span className="text-gray-300">Monday - Friday</span>
-                    <span className="font-semibold">9:00 AM - 6:00 PM</span>
+                    <span className="text-gray-600">Monday - Friday</span>
+                    <span className="font-semibold text-[#1B263B]">9:00 AM - 6:00 PM</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-300">Saturday</span>
-                    <span className="font-semibold">10:00 AM - 4:00 PM</span>
+                    <span className="text-gray-600">Saturday</span>
+                    <span className="font-semibold text-[#1B263B]">10:00 AM - 4:00 PM</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-300">Sunday</span>
-                    <span className="font-semibold">Closed</span>
+                    <span className="text-gray-600">Sunday</span>
+                    <span className="font-semibold text-[#1B263B]">Closed</span>
                   </div>
                 </div>
               </motion.div>

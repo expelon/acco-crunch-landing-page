@@ -17,7 +17,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="w-full z-50 bg-[#f8f4e5]">
+    <nav className="w-full z-50 bg-[#f5f1e6]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-20">
           <div className="flex-1">
@@ -63,7 +63,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gray-200"
+            className="md:hidden bg-[#f5f1e6] border-t border-gray-200"
           >
             <div className="container mx-auto px-4 py-4 space-y-4">
               {navLinks.map((link) => (

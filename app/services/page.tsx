@@ -44,7 +44,7 @@ export default function ServicesPage() {
     <div className="min-h-screen">
       <Navbar />
 
-      <section className="pt-32 pb-20 bg-gradient-to-br from-[#F7F7F7] to-white">
+      <section className="pt-32 pb-20 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
             subtitle="Core Services"
@@ -90,7 +90,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-[#1B263B] to-[#2D3E5F] text-white">
+      <section className="py-20 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -102,10 +102,10 @@ export default function ServicesPage() {
               <div className="inline-block bg-[#F4C542]/20 text-[#F4C542] px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 Our Methodology
               </div>
-              <h2 className="text-4xl font-bold mb-6">
+              <h2 className="text-4xl font-bold mb-6 text-[#1B263B]">
                 A Proven Framework for Success
               </h2>
-              <p className="text-xl text-gray-300 leading-relaxed mb-8">
+              <p className="text-xl text-gray-700 leading-relaxed mb-8">
                 Our consulting methodology combines analytical rigor with practical
                 implementation, ensuring strategies translate into measurable business
                 outcomes.
@@ -113,13 +113,10 @@ export default function ServicesPage() {
               {serviceDetails.map((detail, index) => (
                 <div key={index} className="mb-6">
                   <div className="flex items-start gap-3">
-                    <CheckCircle2
-                      className="text-[#F4C542] flex-shrink-0 mt-1"
-                      size={24}
-                    />
+                    <CheckCircle2 className="text-[#F4C542] flex-shrink-0 mt-1" size={24} />
                     <div>
-                      <h3 className="text-xl font-bold mb-2">{detail.title}</h3>
-                      <p className="text-gray-300">{detail.description}</p>
+                      <h3 className="text-xl font-bold mb-2 text-[#1B263B]">{detail.title}</h3>
+                      <p className="text-gray-700">{detail.description}</p>
                     </div>
                   </div>
                 </div>
@@ -131,9 +128,9 @@ export default function ServicesPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl"
+              className="bg-white p-8 rounded-2xl border border-gray-200"
             >
-              <h3 className="text-2xl font-bold mb-6">Industries We Serve</h3>
+              <h3 className="text-2xl font-bold mb-6 text-[#1B263B]">Industries We Serve</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {industries.map((industry, index) => (
                   <motion.div
@@ -142,10 +139,10 @@ export default function ServicesPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
                     viewport={{ once: true }}
-                    className="flex items-center gap-2 bg-white/5 p-3 rounded-lg"
+                    className="flex items-center gap-2 bg-[#f5f1e6] p-3 rounded-lg border border-gray-200"
                   >
                     <CheckCircle2 className="text-[#F4C542] flex-shrink-0" size={20} />
-                    <span className="text-sm">{industry}</span>
+                    <span className="text-sm text-[#1B263B]">{industry}</span>
                   </motion.div>
                 ))}
               </div>
@@ -154,7 +151,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-[#F7F7F7]">
+      <section className="py-20 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <SectionTitle
@@ -214,7 +211,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -242,7 +239,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Pricing Plans moved from Home */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
             subtitle="Pricing Plans"
