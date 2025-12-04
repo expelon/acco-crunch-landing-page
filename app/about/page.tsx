@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { ArrowRight, Users2, BadgeCheck, LineChart, Globe2, Building2, Sparkles, Eye, Target, ShieldCheck, Handshake, RefreshCw, Lightbulb } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
+import { Poppins } from 'next/font/google';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -19,6 +20,34 @@ const stagger = {
   show: { transition: { staggerChildren: 0.08 } },
 };
 
+// Hero-specific smoother variants
+const heroLeft = {
+  hidden: { opacity: 0, y: 32 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.9,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
+const heroRight = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.0,
+      ease: [0.16, 1, 0.3, 1],
+      delay: 0.12,
+    },
+  },
+};
+
+const numberPoppins = Poppins({ subsets: ['latin'], weight: ['300','400','500','600','700'] });
+
 export default function AboutPage() {
   const [storyImgLoaded, setStoryImgLoaded] = useState(false);
   return (
@@ -26,57 +55,86 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-28 sm:pt-32 pb-12">
+      <section className="pt-20 sm:pt-24 pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            className="max-w-4xl mx-auto text-center"
-          >
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-1.5 text-sm text-[#1B263B] shadow-sm">
-              <Sparkles className="h-4 w-4 text-[#F4C542]" />
-              About Acco Crunch
-            </div>
-            <h1 className="mt-5 text-4xl sm:text-5xl font-semibold text-[#1B263B] tracking-tight">
-              Acco Crunch is a proactive business consultancy firm
-            </h1>
-            <p className="mt-5 text-lg sm:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
-              helping entrepreneurs and organizations build strong foundations through strategic taxation advisory,
-              company incorporation, legal compliance, accounting accuracy, and business structuring expertise. We enable
-              business growth by leveraging real-world financial data, regulatory insights, and efficient corporate
-              practices—ensuring businesses operate not just legally, but intelligently.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left: Copy + Social proof + CTA */}
+            <motion.div
+              variants={heroLeft}
+              initial="hidden"
+              animate="show"
+              className="space-y-8 md:h-[320px] lg:h-[380px] flex flex-col justify-center"
+            >
+              <div>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#1B263B] tracking-normal leading-normal md:leading-snug lg:leading-tight">
+                  Acco Crunch Where
+                  <br className="hidden sm:block" />
+                  strategy meets <br />precision
+                </h1>
+                <p className="mt-5 text-sm sm:text-base text-[#433b33] leading-relaxed max-w-lg">
+                  At Acco Crunch, we’re more than just consultants &mdash; we’re strategic partners committed to
+                  transforming the way businesses operate, grow, and succeed.
+                </p>
+              </div>
 
-      {/* Stats band */}
-      <section className="pb-14">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
-          >
-            {[
-              { label: 'Years Experience', value: '6+' },
-              { label: 'Clients Served', value: '1000+' },
-              { label: 'Success Rate', value: '98%' },
-              { label: 'Industries', value: '15+' },
-            ].map((s, i) => (
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div>
+                    <h4 className="text-base sm:text-lg font-semibold text-[#1B263B] tracking-wide mb-1">1200+ Business Owners</h4>
+                    <p className="text-sm text-[#6f645a]">Trusted Acco Crunch simplifying compliance, accelerating growth.</p>
+                  </div>
+                </div>
+
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-lg bg-[#E8531A] px-6 py-3 text-sm sm:text-base font-medium text-white shadow-sm hover:bg-[#cf4510] transition-colors w-full sm:w-auto"
+                >
+                  Get Started
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right: Image + Stats card */}
+            <motion.div
+              variants={heroRight}
+              initial="hidden"
+              animate="show"
+              className="space-y-2"
+            >
               <motion.div
-                key={s.label}
                 variants={fadeUp}
-                className="rounded-xl bg-white shadow-sm p-6 text-center"
+                className="relative h-[260px] sm:h-[320px] lg:h-[380px] rounded-lg overflow-hidden shadow-md bg-[#e0d4bf]"
               >
-                <div className="text-2xl font-semibold text-[#1B263B]">{s.value}</div>
-                <div className="mt-1 text-sm text-[#1B263B]/70">{s.label}</div>
+                <Image
+                  src="/about.webp"
+                  alt="Business consultant working at a desk"
+                  fill
+                  priority
+                  className="object-cover"
+                />
+                <div className="absolute inset-x-0 bottom-0 h-28 sm:h-32 bg-gradient-to-t from-[#2b2118]/90 via-[#2b2118]/70 to-transparent" />
               </motion.div>
-            ))}
-          </motion.div>
+
+              <motion.div
+                variants={fadeUp}
+                className="rounded-lg bg-white shadow-sm border border-gray-100 grid grid-cols-3 divide-x divide-gray-300 divide-opacity-70 px-6 py-7 sm:py-8"
+              >
+                {[ 
+                  { label: 'Business empowered', value: '150+' },
+                  { label: 'In transactions managed', value: '$500M+' },
+                  { label: 'Years of experience', value: '10+' },
+                ].map((s) => (
+                  <div key={s.label} className="px-4 flex items-center">
+                    <div className="text-left">
+                      <div className={`text-base sm:text-lg font-light text-[#E8531A] ${numberPoppins.className}`}>{s.value}</div>
+                      <div className="mt-1 text-sm text-[#1B263B]/80 leading-snug max-w-[10rem]">{s.label}</div>
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
