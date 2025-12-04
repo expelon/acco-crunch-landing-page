@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Metrics from '@/components/Metrics';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
 
@@ -318,6 +319,7 @@ export default function ContactPage() {
         </div>
       </section>
 
+      <Metrics />
       <Footer />
     </div>
   );

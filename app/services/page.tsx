@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import SectionTitle from '@/components/SectionTitle';
 import ServiceCard from '@/components/ServiceCard';
 import PricingCard from '@/components/PricingCard';
+import Metrics from '@/components/Metrics';
 import { services, pricing } from '@/lib/data';
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
@@ -254,6 +255,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <Metrics />
       <Footer />
     </div>
   );

@@ -2,6 +2,7 @@
 
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Metrics from '@/components/Metrics';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { ArrowRight, Users2, BadgeCheck, LineChart, Globe2, Building2, Sparkles, Eye, Target, ShieldCheck, Handshake, RefreshCw, Lightbulb } from 'lucide-react';
@@ -286,6 +287,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <Metrics />
       <Footer />
     </div>
   );

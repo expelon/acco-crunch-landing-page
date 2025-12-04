@@ -8,6 +8,8 @@ import SectionTitle from '@/components/SectionTitle';
 import SectorShowcase from '@/components/SectorShowcase';
 import PricingCard from '@/components/PricingCard';
 import TestimonialCard from '@/components/TestimonialCard';
+import Metrics from '@/components/Metrics';
+import ConsultCta from '@/components/ConsultCta';
 import { services, whyChooseUs, caseStudies, pricing, testimonials } from '@/lib/data';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, CheckCircle2, BarChart3, ReceiptCent, LineChart } from 'lucide-react';
@@ -80,7 +82,12 @@ export default function Home() {
               className="mt-6 max-w-3xl mx-auto text-center text-gray-700"
             >
               <p className="italic">“Good accounting builds business history. Strategic advisory builds business legacy.”</p>
-              <p className="mt-2 font-medium">- Jaison Mullukattil</p>
+              <div className="mt-2 inline-flex items-center justify-center gap-3">
+                <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden ring-2 ring-white/60">
+                  <Image src="/profile%20photo.jpg" alt="Jaison Mullukattil" fill className="object-cover scale-[1.6]" />
+                </div>
+                <p className="font-medium">Jaison Mullukattil</p>
+              </div>
             </motion.div>
 
             <motion.div
@@ -259,6 +266,10 @@ export default function Home() {
           <SectorShowcase />
         </div>
       </section>
+
+      <Metrics />
+
+      <ConsultCta />
 
       <section className="py-20 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
