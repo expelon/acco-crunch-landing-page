@@ -5,6 +5,7 @@ import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import ServiceCard from '@/components/ServiceCard';
 import SectionTitle from '@/components/SectionTitle';
+import SectorShowcase from '@/components/SectorShowcase';
 import PricingCard from '@/components/PricingCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import { services, whyChooseUs, caseStudies, pricing, testimonials } from '@/lib/data';
@@ -249,6 +250,13 @@ export default function Home() {
               <ArrowRight size={18} className="transition-transform duration-300 ease-out group-hover:translate-x-[6px] group-hover:scale-110" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Sector showcase placed under the Explore more button */}
+      <section className="py-8 bg-[#f5f1e6]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <SectorShowcase />
         </div>
       </section>
 
