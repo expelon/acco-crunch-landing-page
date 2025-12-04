@@ -48,7 +48,7 @@ const sectors: Sector[] = [
       'IP and brand protection through trademarks',
       'Accounting & financial modelling for fundraising',
     ],
-    image: '/card.webp',
+    image: '/IT.webp',
   },
   {
     key: 'education',
@@ -61,7 +61,7 @@ const sectors: Sector[] = [
       'Structure for grants, CSR tie-ups & EdTech protections',
       'Fee accounting & regulatory documentation support',
     ],
-    image: '/card.webp',
+    image: '/education.webp',
   },
   {
     key: 'retail',
@@ -74,7 +74,7 @@ const sectors: Sector[] = [
       'Automated bookkeeping & inventory-linked accounting',
       'Multi-state GST registration & compliance tracking',
     ],
-    image: '/card.webp',
+    image: '/retail.webp',
   },
   {
     key: 'healthcare',
@@ -87,7 +87,7 @@ const sectors: Sector[] = [
       'Compliance for medical services business',
       'Payroll, consultant payout & TDS compliance',
     ],
-    image: '/card.webp',
+    image: '/healthcare.webp',
   },
   {
     key: 'hospitality',
@@ -100,7 +100,7 @@ const sectors: Sector[] = [
       'Payroll, GST & vendor compliance controls',
       'Cash flow visibility & cost-control reporting',
     ],
-    image: '/card.webp',
+    image: '/hospitality.webp',
   },
   {
     key: 'manufacturing',
@@ -113,14 +113,21 @@ const sectors: Sector[] = [
       'Cost-linked tax optimization & reporting',
       'Input tax credit reconciliation & accuracy checks',
     ],
-    image: '/card.webp',
+    image: '/manufacturing.webp',
   },
 ];
 
 export default function SectorShowcase() {
   const [active, setActive] = useState<Sector>(sectors[2]);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const activeIndex = sectors.findIndex((s) => s.key === active.key);
   const isReversed = activeIndex % 2 === 1;
+
+  // Reset image load state when sector changes
+  const handleSectorChange = (sector: Sector) => {
+    setActive(sector);
+    setImageLoaded(false);
+  };
 
   return (
     <motion.div
@@ -139,7 +146,7 @@ export default function SectorShowcase() {
             return (
               <motion.button
                 key={s.key}
-                onClick={() => setActive(s)}
+                onClick={() => handleSectorChange(s)}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 className={
@@ -161,7 +168,26 @@ export default function SectorShowcase() {
       <div className="bg-[#f0ebdd] rounded-b-2xl -mt-1 pt-10 pb-12 sm:pt-14 sm:pb-16 px-4 sm:px-8 lg:px-10 border border-[#e7dfcb] shadow-inner">
         <div className={`flex flex-col md:flex-row ${isReversed ? 'md:flex-row-reverse' : ''} items-stretch gap-12 lg:gap-14`}>
           <div className="relative w-full md:basis-[44%] lg:basis-[46%] h-80 sm:h-[26rem] lg:h-[30rem] rounded-xl overflow-hidden shadow-md">
-            <Image src={active.image || '/card.webp'} alt={active.title} fill className="object-cover" />
+            {!imageLoaded && (
+              <div className="absolute inset-0 bg-[#f0ebdd] animate-pulse" />
+            )}
+            <motion.div
+              className="relative w-full h-full"
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: imageLoaded ? 1 : 0, scale: imageLoaded ? 1 : 1.05 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
+            >
+              <Image
+                src={active.image || '/card.webp'}
+                alt={active.title}
+                fill
+                className="object-cover"
+                onLoad={() => setImageLoaded(true)}
+                onError={() => setImageLoaded(true)}
+                priority={false}
+                loading="lazy"
+              />
+            </motion.div>
           </div>
           <div className="h-full flex flex-col md:basis-[56%] lg:basis-[54%] min-h-80 md:min-h-[26rem] lg:min-h-[30rem]">
             <div>

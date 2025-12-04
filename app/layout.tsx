@@ -7,6 +7,9 @@ const poppins = Poppins({ subsets: ['latin'], weight: ['300', '400', '500', '600
 export const metadata: Metadata = {
   title: 'Acco Crunch - Business Consulting Excellence',
   description: 'Transform your business with strategic consulting solutions that drive growth and operational excellence.',
+  icons: {
+    icon: '/logo.png',
+  },
 };
 
 export default function RootLayout({

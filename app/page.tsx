@@ -83,7 +83,7 @@ export default function Home() {
               <p className="italic">“Good accounting builds business history. Strategic advisory builds business legacy.”</p>
               <div className="mt-2 inline-flex items-center justify-center gap-3">
                 <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden ring-2 ring-white/60">
-                  <Image src="/profile%20photo.jpg" alt="Jaison Mullukattil" fill className="object-cover scale-[1.6]" />
+                  <Image src="/profile%20photo.webp" alt="Jaison Mullukattil" fill className="object-cover scale-[1.6]" />
                 </div>
                 <p className="font-medium">Jaison Mullukattil</p>
               </div>

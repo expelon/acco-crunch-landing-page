@@ -22,7 +22,7 @@ export default function ConsultCta() {
             <div className="absolute inset-0">
               <Image src="/card.webp" alt="Consultation" fill className="object-cover" />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#1f1b18]/95 via-[#1f1b18]/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent" />
           </div>
 
           <div className="relative grid md:grid-cols-2 gap-6 p-6 sm:p-8 lg:p-10">

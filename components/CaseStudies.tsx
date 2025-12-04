@@ -97,7 +97,33 @@ export default function CaseStudies() {
             <div className="bg-[#F4C542]/60 text-[#1B263B] font-medium px-6 py-3">Case study</div>
             <div className="p-6">
               <div className="relative aspect-[16/10] rounded-xl overflow-hidden">
-                <Image src="/card.webp" alt="Case" fill className="object-cover" />
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4, ease: 'easeOut' }}
+                  className="relative w-full h-full"
+                >
+                  <Image 
+                    src={
+                      idx === 0 
+                        ? "/corporate.jpg" 
+                        : idx === 1 
+                          ? "/startup.webp" 
+                          : idx === 2 
+                            ? "/multi.webp" 
+                            : idx === 3 
+                              ? "/trademark.webp" 
+                              : idx === 4 
+                                ? "/personal.webp" 
+                                : "/card.webp"
+                    } 
+                    alt="Case" 
+                    fill 
+                    className="object-cover" 
+                    loading="lazy"
+                  />
+                </motion.div>
               </div>
               <h3 className="mt-5 text-2xl font-semibold text-[#1B263B]">
                 {cs.title}

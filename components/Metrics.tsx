@@ -40,8 +40,8 @@ export default function Metrics() {
             <div className="text-3xl font-bold text-[#E8531A]">5,000+</div>
             <div className="mt-2 inline-block rounded-xl overflow-hidden bg-white shadow-sm w-[180px] h-[120px]">
               <Image
-                src="/about.webp"
-                alt="Business empowered"
+                src="/complince.webp"
+                alt="Business compliance filings"
                 width={180}
                 height={120}
                 className="object-cover w-full h-full"
@@ -61,8 +61,8 @@ export default function Metrics() {
             <div className="text-3xl font-bold text-[#E8531A]">1,200+</div>
             <div className="mt-2 inline-block rounded-xl overflow-hidden bg-white shadow-sm w-[180px] h-[120px]">
               <Image
-                src="/card.webp"
-                alt="In transactions managed"
+                src="/buisnesses.webp"
+                alt="Business incorporation services"
                 width={180}
                 height={120}
                 className="object-cover w-full h-full"
@@ -82,8 +82,8 @@ export default function Metrics() {
             <div className="text-3xl font-bold text-[#E8531A]">₹80Cr+</div>
             <div className="mt-2 inline-block rounded-xl overflow-hidden bg-white shadow-sm w-[180px] h-[120px]">
               <Image
-                src="/about.webp"
-                alt="Years of experience"
+                src="/tax.webp"
+                alt="Tax savings advisory"
                 width={180}
                 height={120}
                 className="object-cover w-full h-full"
