@@ -157,6 +157,73 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Bridge section */}
+      <section className="bg-[#f5f1e6] py-16 sm:py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#1B263B] tracking-normal leading-normal md:leading-snug lg:leading-tight max-w-4xl mx-auto">
+            Where financial clarity and smarter business structure come together
+          </h2>
+          <p className="mt-6 text-sm sm:text-base text-[#433b33] leading-relaxed max-w-2xl mx-auto">
+            We support entrepreneurs and growing organizations in building stronger foundations. Through strategic taxation, accurate compliance, and intelligent business structuring, we ensure that companies operate not just legally — but with confidence, efficiency, and future-ready insight.
+          </p>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-16 sm:py-20 px-4 sm:px-8 lg:px-8">
+        <div className="mx-auto">
+          <div className="bg-[#2a2a2a] rounded-lg p-4 sm:p-6 text-white">
+            {/* Video/Image */}
+            <div className="mb-12 rounded-lg overflow-hidden">
+              <motion.div 
+                className="relative aspect-video bg-[#1a1a1a] rounded-lg overflow-hidden"
+                whileInView={{ scale: 1.05 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <Image
+                  src="/about2.webp"
+                  alt="Professional looking at tablet in front of modern building"
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+            </div>
+            <div className="grid md:grid-cols-2 gap-10 lg:gap-14">
+              {/* Our Mission */}
+              <div>
+                <h3 className="text-white text-xl font-light tracking-[0.05em] mb-4 flex items-center">
+                  <Target className="w-7 h-7 text-[#E8531A] mr-2" />
+                  Our mission
+                </h3>
+                <p className="text-[#f5f1e6] mb-6 opacity-60">
+                  We are committed to simplifying financial and legal complexity for businesses. Through data-driven advisory and disciplined compliance, we enable confident decision-making and long-term operational strength.
+                </p>
+                <ul className="list-disc list-inside text-[#f5f1e6] space-y-2 marker:text-[#E8531A]">
+                  <li className="opacity-60">Strengthen compliance through proactive management</li>
+                  <li className="opacity-60">Empower founders with clarity and control</li>
+                </ul>
+              </div>
+              {/* Our Vision */}
+              <div>
+                <h3 className="text-white text-xl font-light tracking-[0.05em] mb-4 flex items-center">
+                  <Eye className="w-7 h-7 text-[#E8531A] mr-2" />
+                  Our vision
+                </h3>
+                <p className="text-[#f5f1e6] mb-6 opacity-60">
+                  To be a trusted growth partner for organizations seeking smarter structure, strategic tax efficiency, and sustainable expansion backed by financial intelligence.
+                </p>
+                <ul className="list-disc list-inside text-[#f5f1e6] space-y-2 marker:text-[#E8531A]">
+                  <li className="opacity-60">Every business benefits from expert strategy</li>
+                  <li className="opacity-60">Decisions become compliant and insight-led</li>
+                  <li className="opacity-60">Growth is secure, scalable, and future-ready</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Story section */}
       <section className="py-12 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
