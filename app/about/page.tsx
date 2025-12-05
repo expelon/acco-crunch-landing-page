@@ -55,15 +55,15 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-20 sm:pt-24 pb-12">
+      <section className="pt-10 sm:pt-14 pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left: Copy + Social proof + CTA */}
             <motion.div
               variants={heroLeft}
               initial="hidden"
               animate="show"
-              className="space-y-8 md:h-[320px] lg:h-[380px] flex flex-col justify-center"
+              className="space-y-8"
             >
               <div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#1B263B] tracking-normal leading-normal md:leading-snug lg:leading-tight">
@@ -71,16 +71,35 @@ export default function AboutPage() {
                   <br className="hidden sm:block" />
                   strategy meets <br />precision
                 </h1>
-                <p className="mt-5 text-sm sm:text-base text-[#433b33] leading-relaxed max-w-lg">
+                <p className="mt-5 text-sm sm:text-base text-[#433b33] leading-relaxed max-w-md">
                   At Acco Crunch, we’re more than just consultants &mdash; we’re strategic partners committed to
                   transforming the way businesses operate, grow, and succeed.
                 </p>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-6 mt-6">
                 <div className="flex items-start gap-4">
                   <div>
-                    <h4 className="text-base sm:text-lg font-semibold text-[#1B263B] tracking-wide mb-1">1200+ Business Owners</h4>
+                    <div className="flex items-center mb-3">
+                      <div className="flex -space-x-2">
+                        {['/p1.webp', '/p2.webp', '/p3.webp', '/p4.webp'].map((src, idx) => (
+                          <div
+                            key={src}
+                            className="w-9 h-9 rounded-full overflow-hidden border border-[#f5f1e6] shadow-sm bg-[#e0d4bf]"
+                            style={{ zIndex: 10 - idx }}
+                          >
+                            <Image
+                              src={src}
+                              alt={`Client profile ${idx + 1}`}
+                              width={36}
+                              height={36}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <h4 className="text-base sm:text-lg font-light text-[#1B263B] tracking-[0.08em] mb-1">1200+ Business Owners</h4>
                     <p className="text-sm text-[#6f645a]">Trusted Acco Crunch simplifying compliance, accelerating growth.</p>
                   </div>
                 </div>
@@ -121,9 +140,9 @@ export default function AboutPage() {
                 className="rounded-lg bg-white shadow-sm border border-gray-100 grid grid-cols-3 divide-x divide-gray-300 divide-opacity-70 px-6 py-7 sm:py-8"
               >
                 {[ 
-                  { label: 'Business empowered', value: '150+' },
-                  { label: 'In transactions managed', value: '$500M+' },
-                  { label: 'Years of experience', value: '10+' },
+                  { label: 'Businesses incorporated', value: '1,200+' },
+                  { label: 'Compliance filings processed', value: '5,000+' },
+                  { label: 'Years of experience', value: '6+' },
                 ].map((s) => (
                   <div key={s.label} className="px-4 flex items-center">
                     <div className="text-left">
