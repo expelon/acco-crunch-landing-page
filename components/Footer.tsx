@@ -8,18 +8,22 @@ export default function Footer() {
     <footer className="bg-[#f5f1e6]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Top help bar */}
-        <div className="rounded-xl bg-[#2b2420] text-white px-6 py-4 flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
-          <h3 className="text-xl sm:text-xl font-light">How can we help?</h3>
+        <div className="rounded-xl bg-[#2b2420] text-white px-4 sm:px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+          <h3 className="text-lg sm:text-xl font-light w-full sm:w-auto text-left">
+            How can we help?
+          </h3>
 
-          <div className="flex-1 w-full flex justify-center">
-            <div className="flex flex-wrap items-center gap-6 sm:gap-10 text-sm">
-              <Link href="/contact" className="hover:text-[#F4C542]">Contact</Link>
-              <a href="mailto:hello.accocrunch@gmail.com" className="hover:text-[#F4C542]">hello.accocrunch@gmail.com</a>
-              <a href="tel:+918089200829" className="hover:text-[#F4C542]">+91 80892 00829</a>
+          <div className="flex-1 w-full flex justify-start">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-xs sm:text-sm">
+              <Link href="/contact" className="hover:text-[#F4C542] whitespace-nowrap">Contact</Link>
+              <a href="mailto:hello.accocrunch@gmail.com" className="hover:text-[#F4C542] break-all sm:break-normal">
+                hello.accocrunch@gmail.com
+              </a>
+              <a href="tel:+918089200829" className="hover:text-[#F4C542] whitespace-nowrap">+91 80892 00829</a>
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 w-full sm:w-auto justify-start sm:justify-end">
             <a href="https://www.facebook.com/share/17fU596WUK/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-md bg-white/10 flex items-center justify-center hover:bg-white/20"><Facebook size={18} /></a>
             <a href="https://www.instagram.com/accocrunch?igsh=czd5ZDhjZnVnenZ2" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-md bg-white/10 flex items-center justify-center hover:bg-white/20"><Instagram size={18} /></a>
             <a href="https://youtube.com/@accocrunch?si=-XhGEnP_omXkFWn3" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-9 h-9 rounded-md bg-white/10 flex items-center justify-center hover:bg-white/20"><Youtube size={18} /></a>
@@ -35,7 +39,7 @@ export default function Footer() {
         <div className="mt-4 grid lg:grid-cols-2 gap-4">
           {/* Left: navigation lists */}
           <div className="rounded-2xl bg-white p-6 sm:p-8">
-            <div className="grid grid-cols-2 gap-8 items-start">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-start">
               {/* Left: Pages */}
               <div>
                 <div className="text-[#1B263B] font-semibold mb-4">Pages</div>
@@ -47,8 +51,8 @@ export default function Footer() {
                 </ul>
               </div>
 
-              {/* Right: Services with vertical divider */}
-              <div className="pl-8 border-l border-black/10">
+              {/* Right: Services with vertical divider (only on sm and up) */}
+              <div className="sm:pl-8 sm:border-l border-black/10">
                 <div className="text-[#1B263B] font-semibold mb-4">Services</div>
                 <ul className="space-y-2 text-sm text-[#1B263B]/80">
                   <li><Link href="/services" className="hover:text-[#E8531A]">Business Registration & Advisory</Link></li>
@@ -62,16 +66,16 @@ export default function Footer() {
 
           {/* Right: CTA panel */}
           <div className="rounded-2xl bg-white p-6 sm:p-8">
-            <div className="flex items-center justify-between gap-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="max-w-[26rem] sm:max-w-[32rem]">
                 <div className="text-xl font-light tracking-[0.02em] text-[#1B263B]">Gain full control over your accounting and strategy.</div>
               </div>
-              <Link href="/contact" className="shrink-0 inline-flex items-center gap-2 bg-[#E8531A] text-white px-4 py-3 rounded-lg hover:bg-[#c74512]">
+              <Link href="/contact" className="shrink-0 inline-flex items-center gap-2 bg-[#E8531A] text-white px-4 py-3 rounded-lg hover:bg-[#c74512] w-full sm:w-auto justify-center">
                 Let's get started <ArrowRight size={16} />
               </Link>
             </div>
 
-            <div className="mt-8 grid grid-cols-[80px_1fr] gap-4 items-start">
+            <div className="mt-8 grid grid-cols-[72px_1fr] sm:grid-cols-[80px_1fr] gap-4 items-start">
               <div className="mt-2 aspect-square rounded-md overflow-hidden bg-[#f5f1e6]">
                 <img src="/card.webp" alt="Office" className="w-full h-full object-cover" />
               </div>

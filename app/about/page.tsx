@@ -227,6 +227,8 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <ServicesShowcase />
+
       <ProfileSection />
 
       <ConsultCta />

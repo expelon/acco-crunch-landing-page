@@ -41,11 +41,17 @@ export default function ServicesShowcase() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
-            className="px-6 sm:px-8 lg:px-12 flex flex-col h-full"
+            className="px-1 sm:px-4 lg:px-12 flex flex-col h-full"
           >
             <motion.div variants={fadeUp} className="max-w-xl mb-8">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light leading-tight text-[#2b2118]">
-                Your business goals, Powered by our expert services
+                Your business goals,
+                <br className="block sm:hidden" />
+                <span className="sm:whitespace-nowrap">
+                  {' '}Powered by our expert 
+                </span>
+                <br className="block sm:hidden" />
+                {' '}services
               </h2>
               <p className="mt-4 text-sm text-[#615b52] opacity-80">
                 From structuring companies to strengthening compliance, we bridge the gap between legal foundations and business performance.
@@ -55,16 +61,18 @@ export default function ServicesShowcase() {
             <div className="flex-grow flex flex-col justify-end">
               <motion.div
                 variants={fadeUp}
-                className="grid sm:grid-cols-3 gap-2 sm:gap-3"
+                className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3"
               >
                 {[
                   { label: "Business Registration & Legal Structuring", icon: <FileText className="w-5 h-5 text-[#E8531A]" /> },
                   { label: "Accounting, Taxation & Statutory Compliance", icon: <TrendingUp className="w-5 h-5 text-[#E8531A]" /> },
                   { label: "Strategic Finance & Business Growth Advisory", icon: <Calculator className="w-5 h-5 text-[#E8531A]" /> },
-                ].map((item) => (
+                ].map((item, index) => (
                   <div
                     key={item.label}
-                    className="rounded-lg bg-[#e9e4da] px-4 py-4 sm:py-5 flex flex-col justify-between shadow-sm min-h-[140px]"
+                    className={`rounded-lg bg-[#e9e4da] px-4 py-4 sm:py-5 flex flex-col justify-between shadow-sm min-h-[140px] ${
+                      index === 2 ? 'col-span-2 sm:col-span-1' : ''
+                    }`}
                   >
                     <div className="flex items-center justify-between mb-3">
                       <div className="w-9 h-9 rounded-lg bg-white flex items-center justify-center">
