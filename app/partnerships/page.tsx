@@ -143,7 +143,7 @@ export default function PartnershipsPage() {
               {/* Inner container for image and items */}
               <div className="flex flex-col lg:flex-row gap-0">
                 {/* Left: Full width image */}
-                <div className="relative overflow-hidden rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none flex-1">
+                <div className="relative overflow-hidden rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none flex-1 min-h-[250px] sm:min-h-[300px]">
                   <div className="absolute inset-0 w-full h-full">
                     <Image
                       src="/partnership3.webp"
@@ -259,7 +259,312 @@ export default function PartnershipsPage() {
         </div>
       </section>
 
-      <Footer />
+      {/* Our Methodology Section */}
+      <section className="py-8 sm:py-12 bg-[#f5f1e6]">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-5xl mx-auto">
+            <motion.h3
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="mt-8 text-xl sm:text-2xl lg:text-3xl font-light text-[#1B263B] text-center"
+            >
+              Ideal Partnership Profiles
+            </motion.h3>
+
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.05 }}
+              viewport={{ once: true }}
+              className="mt-4 text-center text-xs sm:text-sm text-[#433b33] opacity-80 max-w-3xl mx-auto"
+            >
+              Each engagement model is tailored based on the partner's service structure, client segment, and strategic requirements.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="mt-10 space-y-1 sm:space-y-2"
+            >
+              {/* Row 1: 1 | blank | 2 | blank */}
+              <div className="grid md:grid-cols-[1.1fr_0.6fr_1.5fr_0.6fr] gap-1 sm:gap-2">
+                {/* Partner 1 - Business Consultants */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className="rounded-md bg-transparent border border-[#e3ddcf] flex items-center px-2 py-2 sm:px-2 sm:py-2 min-h-[50px] md:h-[60px]"
+                >
+                  <div className="text-xs sm:text-sm text-[#1B263B]">Business Consultants, Startup Mentors & Advisory Firms</div>
+                </motion.div>
+
+                {/* Placeholder */}
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 0.15 }}
+                  viewport={{ once: true }}
+                  className="hidden md:block rounded-xl bg-[#e9e1d1] md:h-[60px]" 
+                />
+
+                {/* Partner 2 - CA/CS Firms */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="rounded-md bg-transparent border border-[#e3ddcf] flex items-center px-2 py-2 sm:px-2 sm:py-2 min-h-[50px] md:h-[60px]"
+                >
+                  <div className="text-xs sm:text-sm text-[#1B263B]">CA / CS Firms & Accounting Professionals</div>
+                </motion.div>
+
+                {/* Placeholder */}
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 0.25 }}
+                  viewport={{ once: true }}
+                  className="hidden md:block rounded-xl bg-[#e9e1d1] md:h-[60px]" 
+                />
+              </div>
+
+              {/* Row 2: 3 | blank | 4 */}
+              <div className="grid md:grid-cols-[1.6fr_1fr_1.6fr] gap-1 sm:gap-2">
+                {/* Partner 3 - Legal Practices */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="rounded-md bg-transparent border border-[#e3ddcf] flex items-center px-2 py-2 sm:px-2 sm:py-2 min-h-[50px] md:h-[60px]"
+                >
+                  <div className="text-xs sm:text-sm text-[#1B263B]">Legal, Financial, and Business Advisory Practices</div>
+                </motion.div>
+
+                {/* Placeholder */}
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 0.35 }}
+                  viewport={{ once: true }}
+                  className="hidden md:block rounded-xl bg-[#e9e1d1] md:h-[60px]" 
+                />
+
+                {/* Partner 4 - Marketing Agencies */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                  className="rounded-md bg-transparent border border-[#e3ddcf] flex items-center px-2 py-2 sm:px-2 sm:py-2 min-h-[50px] md:h-[60px]"
+                >
+                  <div className="text-xs sm:text-sm text-[#1B263B]">Marketing & Strategic Growth Agencies</div>
+                </motion.div>
+              </div>
+
+              {/* Row 3: blank | 5 | blank | 6 */}
+              <div className="grid md:grid-cols-[0.7fr_1fr_0.7fr_0.7fr] gap-1 sm:gap-2">
+                {/* Placeholder */}
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 0.45 }}
+                  viewport={{ once: true }}
+                  className="hidden md:block rounded-xl bg-[#e9e1d1] md:h-[60px]" 
+                />
+
+                {/* Partner 5 - Co-working Hubs */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  viewport={{ once: true }}
+                  className="rounded-md bg-transparent border border-[#e3ddcf] flex items-center px-2 py-2 sm:px-2 sm:py-2 min-h-[50px] md:h-[60px]"
+                >
+                  <div className="text-xs sm:text-sm text-[#1B263B]">Co-working Hubs & Startup Incubators</div>
+                </motion.div>
+
+                {/* Placeholder */}
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 0.55 }}
+                  viewport={{ once: true }}
+                  className="hidden md:block rounded-xl bg-[#e9e1d1] md:h-[60px]" 
+                />
+
+                {/* Partner 6 - Learning Platforms */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  viewport={{ once: true }}
+                  className="rounded-md bg-transparent border border-[#e3ddcf] flex items-center px-2 py-2 sm:px-2 sm:py-2 min-h-[50px] md:h-[60px]"
+                >
+                  <div className="text-xs sm:text-sm text-[#1B263B]">Entrepreneurship Learning Platforms</div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partnership Metrics Section */}
+      <section className="py-20 bg-[#f5f1e6]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.h2
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-3xl sm:text-4xl font-light text-[#1B263B]"
+            >
+              Compliance & Confidentiality Commitment
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="mt-3 text-sm text-gray-600"
+            >
+              We uphold the highest professional standards and adhere to the following protocols
+            </motion.p>
+          </div>
+
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-0 items-start md:divide-x md:divide-black/10">
+            {/* Item 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center md:pr-8"
+            >
+              <div className="mt-2 inline-block rounded-xl overflow-hidden bg-white shadow-sm w-[180px] h-[120px]">
+                <Image
+                  src="/partnership1.webp"
+                  alt="Strategic partnerships established"
+                  width={180}
+                  height={120}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="mt-4 text-gray-700">Ethical advisory and conflict-free engagement practices</div>
+            </motion.div>
+
+            {/* Item 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-center md:px-8"
+            >
+              <div className="mt-2 inline-block rounded-xl overflow-hidden bg-white shadow-sm w-[180px] h-[120px]">
+                <Image
+                  src="/partnership2.jpg"
+                  alt="Clients served through partnerships"
+                  width={180}
+                  height={120}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="mt-4 text-gray-700">Full documentation trail for partner projects</div>
+            </motion.div>
+
+            {/* Item 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-center md:px-8"
+            >
+              <div className="mt-2 inline-block rounded-xl overflow-hidden bg-white shadow-sm w-[180px] h-[120px]">
+                <Image
+                  src="/partnership3.webp"
+                  alt="Years of partnership excellence"
+                  width={180}
+                  height={120}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="mt-4 text-gray-700">NDA-based information handling and client security assurance</div>
+            </motion.div>
+
+            {/* Item 4 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-center md:pl-8"
+            >
+              <div className="mt-2 inline-block rounded-xl overflow-hidden bg-white shadow-sm w-[180px] h-[120px]">
+                <Image
+                  src="/card.webp"
+                  alt="Compliance protocols maintained"
+                  width={180}
+                  height={120}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="mt-4 text-gray-700">Multi-level review and compliance validation before project closure</div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Custom solution slim CTA above Footer */}
+      <section className="py-10 mt-2 sm:mt-8 bg-[#f5f1e6]">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 bg-[#2a2622] rounded-lg px-3 sm:px-3 lg:px-4 py-3 sm:py-3 shadow-md">
+              <div className="hidden sm:block">
+                <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded overflow-hidden bg-[#3a342f]">
+                  <Image
+                    src="/partnership1.webp"
+                    alt="Partnership solution"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              <div className="text-center sm:text-left flex-1 text-white text-xs sm:text-sm leading-relaxed opacity-80">
+                Stronger partnerships create stronger businesses — let's achieve more success together now.
+              </div>
+
+              <div className="flex-shrink-0 w-full sm:w-auto">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-md bg-[#E8531A] px-4 sm:px-5 py-2 text-xs sm:text-sm font-medium text-white shadow-sm hover:bg-[#cf4510] transition-colors whitespace-nowrap w-full sm:w-auto"
+                >
+                  Let's Get Started
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <div className="mt-8">
+        <Footer />
+      </div>
     </div>
   );
 }
