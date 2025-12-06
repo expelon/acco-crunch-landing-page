@@ -2,112 +2,148 @@
 
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, easeOut } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Handshake, Users, Target, TrendingUp, Award, Plus, Minus } from 'lucide-react';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
+// Hero-specific smoother variants
+const heroLeft = {
+  hidden: { opacity: 0, y: 32 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.9,
+      ease: easeOut,
+    },
+  },
+};
+
+const heroRight = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.0,
+      ease: easeOut,
+      delay: 0.12,
+    },
+  },
+};
 
 export default function PartnershipsPage() {
-  const imgRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: imgRef, offset: ['start end', 'end start'] });
-  const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
   const [expandedItems, setExpandedItems] = useState<number[]>([]);
 
   return (
     <div className="min-h-screen">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="pt-8 sm:pt-10 pb-12 sm:pb-16 bg-[#f5f1e6]">
+      {/* Hero */}
+      <section className="pt-10 sm:pt-14 pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Top heading + copy */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="grid lg:grid-cols-[1.3fr_1fr] gap-6 lg:gap-10 items-center"
-          >
-            <div>
-              <h1 className="text-3xl sm:text-4xl lg:text-[40px] font-light text-[#1B263B] leading-snug sm:leading-relaxed lg:leading-[1.4]">
-                Collaboration that strengthens services and client satisfaction
-              </h1>
-            </div>
-            <div className="max-w-xl lg:justify-self-end">
-              <p className="text-xs sm:text-sm text-[#433b33] leading-relaxed">
-                Gain trusted backend support, expand advisory solutions, and increase client value with our proven expertise, strict confidentiality, and structured service delivery excellence.
-              </p>
-            </div>
-          </motion.div>
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
+            {/* Left: Copy + Social proof + CTA */}
+            <motion.div
+              variants={heroLeft}
+              initial="hidden"
+              animate="show"
+              className="space-y-8"
+            >
+              <div>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#1B263B] tracking-normal leading-normal md:leading-snug lg:leading-tight">
+                  Collaboration that
+                  <br className="hidden sm:block" />
+                  strengthens services <br />and client satisfaction
+                </h1>
+                <p className="mt-5 text-sm sm:text-base text-[#433b33] leading-relaxed max-w-md">
+                  Gain trusted backend support, expand advisory solutions, and increase client value with our proven expertise, strict confidentiality, and structured service delivery excellence.
+                </p>
+              </div>
 
-          {/* Main visual row */}
-          <motion.div
-            ref={imgRef}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-8 lg:mt-10 grid grid-cols-2 gap-1 lg:gap-2"
-          >
-            {/* Left image */}
-            <div className="rounded-lg overflow-hidden shadow-md bg-[#e0d4bf] relative h-[180px] sm:h-[220px] lg:h-[400px]">
-              <motion.div style={{ scale: imgScale }} className="w-full h-full">
+              <div className="space-y-6 mt-6">
+                <div className="flex items-start gap-4">
+                  <div>
+                    <div className="flex items-center mb-3">
+                      <div className="flex -space-x-2">
+                        {['/p1.webp', '/p2.webp', '/p3.webp', '/p4.webp'].map((src, idx) => (
+                          <div
+                            key={src}
+                            className="w-9 h-9 rounded-full overflow-hidden border border-[#f5f1e6] shadow-sm bg-[#e0d4bf]"
+                            style={{ zIndex: 10 - idx }}
+                          >
+                            <Image
+                              src={src}
+                              alt={`Partner profile ${idx + 1}`}
+                              width={36}
+                              height={36}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <h4 className="text-base sm:text-lg font-light text-[#1B263B] tracking-[0.08em] mb-1">75+ Strategic Partners</h4>
+                    <p className="text-sm text-[#6f645a]">Trusted Acco Crunch expanding services and client value.</p>
+                  </div>
+                </div>
+
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-lg bg-[#E8531A] px-6 py-3 text-sm sm:text-base font-medium text-white shadow-sm hover:bg-[#cf4510] transition-colors w-full sm:w-auto"
+                >
+                  Get Started
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right: Image + Stats card */}
+            <motion.div
+              variants={heroRight}
+              initial="hidden"
+              animate="show"
+              className="space-y-2"
+            >
+              <motion.div
+                variants={fadeUp}
+                className="relative h-[260px] sm:h-[320px] lg:h-[380px] rounded-lg overflow-hidden shadow-md bg-[#e0d4bf]"
+              >
                 <Image
                   src="/partnership1.webp"
                   alt="Partners collaborating"
                   fill
+                  priority
                   className="object-cover"
                 />
+                <div className="absolute inset-x-0 bottom-0 h-28 sm:h-32 bg-gradient-to-t from-[#2b2118]/90 via-[#2b2118]/70 to-transparent" />
               </motion.div>
-            </div>
 
-            {/* Right image with overlay card */}
-            <div className="rounded-lg overflow-hidden shadow-md bg-[#e0d4bf] relative h-[180px] sm:h-[220px] lg:h-[400px]">
-              <motion.div style={{ scale: imgScale }} className="w-full h-full">
-                <Image
-                  src="/partnership2.jpg"
-                  alt="Business partnership discussion"
-                  fill
-                  className="object-cover"
-                />
+              <motion.div
+                variants={fadeUp}
+                className="rounded-lg bg-white shadow-sm border border-gray-100 grid grid-cols-3 divide-x divide-gray-300 divide-opacity-70 px-6 py-7 sm:py-8"
+              >
+                {[ 
+                  { label: 'Strategic partnerships', value: '75+' },
+                  { label: 'Clients served', value: '500+' },
+                  { label: 'Years of excellence', value: '6+' },
+                ].map((s) => (
+                  <div key={s.label} className="px-4 flex items-center">
+                    <div className="text-left">
+                      <div className="text-base sm:text-lg font-light text-[#E8531A]">{s.value}</div>
+                      <div className="mt-1 text-sm text-[#1B263B]/80 leading-snug max-w-[10rem]">{s.label}</div>
+                    </div>
+                  </div>
+                ))}
               </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Bottom info strip */}
-          <div className="mt-3 lg:mt-4 rounded-xl bg-[#f0e8dc] px-4 sm:px-5 lg:px-6 py-4 sm:py-5 flex flex-col sm:flex-row gap-4 sm:items-center">
-            {/* Mini card */}
-            <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-lg overflow-hidden bg-[#f5f1e6] flex-shrink-0">
-                <Image
-                  src="/card.webp"
-                  alt="Partnership success"
-                  width={64}
-                  height={64}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="min-w-0">
-                <div className="text-sm sm:text-base text-[#1B263B] truncate">
-                  Partnerships built on trust
-                </div>
-              </div>
-            </div>
-
-            {/* Badges */}
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs sm:text-sm text-[#433b33]">
-              <div className="inline-flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#E8531A]" />
-                1,200+ Businesses incorporated
-              </div>
-              <div className="inline-flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#E8531A]" />
-                5,000+ Compliance filings processed
-              </div>
-              <div className="inline-flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#E8531A]" />
-                6+ Years of experience
-              </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
