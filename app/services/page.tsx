@@ -1,15 +1,46 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 import SectionTitle from '@/components/SectionTitle';
 import ServiceCard from '@/components/ServiceCard';
 import PricingCard from '@/components/PricingCard';
 import Metrics from '@/components/Metrics';
 import { services, pricing } from '@/lib/data';
 import { motion } from 'framer-motion';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Users, Target, TrendingUp, Shield } from 'lucide-react';
 import Link from 'next/link';
+
+// Testimonials data
+const testimonials = [
+  {
+    name: 'Titus Gomez',
+    company: 'Company Registration',
+    review: 'They guided me through every step. I now run a fully compliant private limited company with confidence.'
+  },
+  {
+    name: 'Sivakumar',
+    company: 'Firm Registration',
+    review: 'Accuracy and professionalism at its best. I trusted them for partnership firm registration, and it was seamless.'
+  },
+  {
+    name: 'Unni Babu',
+    company: 'GST Registration',
+    review: 'I was clueless about GST compliance. Their clarity and support made it easy for my business.'
+  },
+  {
+    name: 'Arun Bose',
+    company: 'Project Report for Loan',
+    review: 'Their financial projections and structured report helped me secure bank approval for my loan.'
+  },
+  {
+    name: 'Riyas',
+    company: 'GST Filing',
+    review: 'Fast, error-free GST filing every month. Highly reliable partner for compliance.'
+  }
+];
 
 const serviceDetails = [
   {
@@ -41,221 +72,639 @@ const industries = [
 ];
 
 export default function ServicesPage() {
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  // Auto-rotate testimonials
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 4000); // Change every 4 seconds
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="min-h-screen">
       <Navbar />
 
-      <section className="pt-32 pb-20 bg-[#f5f1e6]">
+      <section className="pt-16 sm:pt-20 pb-10 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-3xl mx-auto text-center"
           >
-            <div className="inline-block bg-[#F4C542]/10 text-[#1B263B] px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Our Services
+            <div className="w-12 h-12 rounded-md bg-white mx-auto flex items-center justify-center mb-4 shadow-sm">
+              <svg viewBox="0 0 24 24" className="w-6 h-6 text-[#E8531A]" fill="currentColor" aria-hidden="true"><path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 17h2v-7H7v7zm4 0h2V7h-2v10zm4 0h2v-4h-2v4z"/></svg>
             </div>
-            <h1 className="text-5xl sm:text-6xl font-bold text-[#1B263B] mb-6">
-              Strategic Solutions for
-              <span className="text-[#F4C542]"> Complex Challenges</span>
+            <h1 className="text-3xl sm:text-4xl font-light text-[#1B263B]">
+              Business Registration & Legal Structuring
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              Our comprehensive suite of consulting services empowers organizations
-              to navigate uncertainty, capitalize on opportunities, and achieve
-              sustainable competitive advantage.
+            <p className="mt-3 text-sm text-[#433b33] leading-relaxed max-w-md mx-auto">
+              A strong business foundation begins with the right structure. Proper registration and compliance ensure your venture is built to grow confidently and operate without obstacles from day one.
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-[#1B263B] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#2D3E5F] transition-all duration-300 hover:scale-105"
-            >
-              Start Your Journey
-              <ArrowRight size={20} />
-            </Link>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-8"
+          >
+            <div className="mx-auto max-w-5xl rounded-xl overflow-hidden shadow-md relative bg-[#e0d4bf]" style={{ aspectRatio: '16/9' }}>
+              <Image
+                src="/service1.webp"
+                alt="Financial planning"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-28 sm:h-36 bg-gradient-to-t from-black/85 via-black/60 to-transparent" />
+            </div>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-20 bg-[#f5f1e6]">
+      {/* Bridge section above Core Services */}
+      <section className="py-16 sm:py-20 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle
-            subtitle="Core Services"
-            title="Comprehensive Consulting Expertise"
-            description="From strategy to execution, we provide end-to-end support across all critical business functions."
-          />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-            {services.map((service, index) => (
-              <ServiceCard key={index} {...service} index={index} />
-            ))}
+          <div className="max-w-5xl mx-auto">
+            <motion.h2
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-xl sm:text-2xl lg:text-3xl font-light text-[#1B263B] text-left"
+            >
+              Where legal structure builds clarity, compliance, and future scale
+            </motion.h2>
+
+            <div className="mt-10 grid lg:grid-cols-[1.1fr_1fr_1.1fr] gap-8 items-start">
+            {/* Left copy */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.05 }}
+              viewport={{ once: true }}
+            >
+              <div>
+              <ul className="divide-y divide-[#e5dfd2] rounded-lg overflow-hidden bg-transparent">
+                {[
+                  {
+                    title: 'Company Incorporation & Entity Structuring',
+                    subtitle: '(Private Limited, LLP, OPC, Section 8, Partnership Firms)'
+                  },
+                  {
+                    title: 'GST, MSME & Startup India Registrations',
+                    subtitle: ''
+                  },
+                  {
+                    title: 'Corporate Legal Documentation',
+                    subtitle: '(MOA/AOA, Founders & Shareholder Agreements, Vendor & Employment Contracts)'
+                  }
+                ].map((item) => (
+                  <li key={item.title} className="py-4">
+                    <div className="flex items-center gap-3 text-[#433b33]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#E8531A]" />
+                      <div>
+                        <span className="text-sm">{item.title}</span>
+                        {item.subtitle && (
+                          <span className="text-xs text-[#433b33]/80 block mt-1">{item.subtitle}</span>
+                        )}
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              </div>
+            </motion.div>
+
+            {/* Middle image + CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="rounded-xl overflow-hidden shadow-md bg-[#e0d4bf] relative" style={{ aspectRatio: '16/9' }}>
+                <Image src="/service2.webp" alt="Consultation" fill className="object-cover" />
+              </div>
+              <Link
+                href="/contact"
+                className="mt-4 inline-flex w-full items-center justify-center rounded-xl bg-[#E8531A] text-white text-sm font-medium py-3 shadow-sm hover:bg-[#cf4510] transition-colors"
+              >
+                Book a free consultation
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+            </motion.div>
+
+            {/* Right gain list */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              viewport={{ once: true }}
+            >
+              <div>
+              <ul className="divide-y divide-[#e5dfd2] rounded-lg overflow-hidden bg-transparent">
+                {[
+                  {
+                    title: 'Trademark & IP Protection',
+                    subtitle: '(Search, Filing, Objection Management)'
+                  },
+                  {
+                    title: 'Post-Incorporation Compliance & Advisory',
+                    subtitle: ''
+                  }
+                ].map((item) => (
+                  <li key={item.title} className="py-4">
+                    <div className="flex items-center gap-3 text-[#433b33]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#E8531A]" />
+                      <div>
+                        <span className="text-sm">{item.title}</span>
+                        {item.subtitle && (
+                          <span className="text-xs text-[#433b33]/80 block mt-1">{item.subtitle}</span>
+                        )}
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              </div>
+            </motion.div>
+          </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-[#f5f1e6]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="inline-block bg-[#F4C542]/20 text-[#F4C542] px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                Our Methodology
-              </div>
-              <h2 className="text-4xl font-bold mb-6 text-[#1B263B]">
-                A Proven Framework for Success
-              </h2>
-              <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                Our consulting methodology combines analytical rigor with practical
-                implementation, ensuring strategies translate into measurable business
-                outcomes.
+      {/* Accounting, Taxation & Statutory Compliance Section */}
+      <section className="py-8 sm:py-12 bg-[#f5f1e6]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-light text-[#1B263B]">
+              Accounting, Taxation & Statutory Compliance
+            </h2>
+          </motion.div>
+
+          {/* Inner challenges panel */}
+          <div className="mt-12 rounded-xl bg-[#ece6d7] px-5 sm:px-8 lg:px-12 py-8 sm:py-10 max-w-6xl mx-auto">
+            <div className="text-center max-w-4xl mx-auto">
+              <h3 className="text-3xl sm:text-xl lg:text-2xl font-light text-[#1B263B] text-center">
+                Where compliance builds financial clarity and fuels confident growth
+              </h3>
+              <p className="mt-3 text-xs sm:text-sm text-[#433b33] opacity-80 leading-relaxed">
+                Accurate accounting, smart tax planning and strong compliance prevent penalties, improve cash flow, build credibility and support sustainable business expansion.
               </p>
-              {serviceDetails.map((detail, index) => (
-                <div key={index} className="mb-6">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="text-[#F4C542] flex-shrink-0 mt-1" size={24} />
-                    <div>
-                      <h3 className="text-xl font-bold mb-2 text-[#1B263B]">{detail.title}</h3>
-                      <p className="text-gray-700">{detail.description}</p>
+            </div>
+
+            <div className="mt-12 grid gap-x-4 gap-y-4 md:grid-cols-2 xl:grid-cols-4">
+              {[
+                {
+                  title: 'End-to-End Accounting & Bookkeeping',
+                  subtitle: '(Monthly Financials, MIS Reporting, Ledger Management)',
+                  icon: (
+                    <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#E8531A]" fill="currentColor">
+                      <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                    </svg>
+                  )
+                },
+                {
+                  title: 'Tax Filing & Advisory',
+                  subtitle: '(GST, TDS, Income Tax – Filing, Assessment, and Consultation)',
+                  icon: (
+                    <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#E8531A]" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                    </svg>
+                  )
+                },
+                {
+                  title: 'ROC & Secretarial Compliance',
+                  subtitle: '(Annual Filings, Returns, Registers & Documentation Audit)',
+                  icon: (
+                    <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#E8531A]" fill="currentColor">
+                      <path d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"/>
+                    </svg>
+                  )
+                },
+                {
+                  title: 'Virtual CFO Services for SMEs',
+                  subtitle: '(Budgeting, Cost Controls, Financial Systems & KPI Monitoring)',
+                  icon: (
+                    <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#E8531A]" fill="currentColor">
+                      <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+                    </svg>
+                  )
+                },
+              ].map((item, index) => (
+                <div key={item.title} className="space-y-2">
+                  <div className="rounded-xl overflow-hidden bg-[#faf8f5] shadow-sm h-[140px]">
+                    <div className="px-5 pt-5 pb-5">
+                      <div className="w-10 h-10 rounded-lg bg-[#ece6d7] flex items-center justify-center mb-3">
+                        {item.icon}
+                      </div>
+                      <div className="text-sm font-medium text-[#1B263B] leading-tight">
+                        {item.title}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="rounded-xl overflow-hidden bg-[#f5f1e6] shadow-sm h-[60px]">
+                    <div className="px-5 pt-3 pb-3">
+                      <div className="text-xs text-[#433b33]/80 leading-tight">
+                        {item.subtitle}
+                      </div>
                     </div>
                   </div>
                 </div>
               ))}
-            </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+      {/* Custom solution slim CTA above Core Services */}
+      <section className="py-10 bg-[#f5f1e6]">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="flex items-center gap-4 sm:gap-6 bg-[#2a2622] rounded-lg px-3 sm:px-4 lg:px-6 py-3 sm:py-4 shadow-md">
+              <div className="hidden sm:block">
+                <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded overflow-hidden bg-[#3a342f]">
+                  <Image
+                    src="/service2.webp"
+                    alt="Custom solution"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              <div className="flex-1 text-white text-xs sm:text-sm leading-relaxed opacity-80">
+                We're ready to build a custom solution around your specific needs.
+              </div>
+
+              <div className="flex-shrink-0">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-md bg-[#E8531A] px-4 sm:px-5 py-2 text-xs sm:text-sm font-medium text-white shadow-sm hover:bg-[#cf4510] transition-colors whitespace-nowrap"
+                >
+                  Let's get started
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Strategic Finance & Business Growth Advisory Section */}
+      <section className="py-8 sm:py-12 bg-[#f5f1e6]">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-5xl mx-auto">
+            <motion.h2
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white p-8 rounded-2xl border border-gray-200"
+              className="text-xl sm:text-2xl lg:text-3xl font-light text-[#1B263B] text-center"
             >
-              <h3 className="text-2xl font-bold mb-6 text-[#1B263B]">Industries We Serve</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {industries.map((industry, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    viewport={{ once: true }}
-                    className="flex items-center gap-2 bg-[#f5f1e6] p-3 rounded-lg border border-gray-200"
-                  >
-                    <CheckCircle2 className="text-[#F4C542] flex-shrink-0" size={20} />
-                    <span className="text-sm text-[#1B263B]">{industry}</span>
-                  </motion.div>
-                ))}
+              Strategic Finance & Business Growth Advisory
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.05 }}
+              viewport={{ once: true }}
+              className="text-center text-sm sm:text-base text-[#433b33] mt-4 max-w-4xl mx-auto"
+            >
+              Guiding founders and organizations with intelligent financial practices, risk reduction, and performance improvement strategies that unlock opportunities, attract funding, support expansion, and deliver continuous growth while staying structurally and operationally strong.
+            </motion.p>
+
+            <motion.h3
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.05 }}
+              viewport={{ once: true }}
+              className="text-left text-xl sm:text-2xl text-[#1B263B] mt-8 font-normal"
+            >
+              Where strategic finance accelerates growth, profitability, and investor confidence
+            </motion.h3>
+
+            <div className="mt-10 grid lg:grid-cols-[1.1fr_1fr_1.1fr] gap-8 items-start">
+              {/* Left finance services list */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.05 }}
+                viewport={{ once: true }}
+              >
+                <div>
+                  <ul className="divide-y divide-[#e5dfd2] rounded-lg overflow-hidden bg-transparent">
+                    {[
+                      {
+                        title: 'Tax Planning & Capital Structuring for Profit Optimization',
+                        subtitle: ''
+                      },
+                      {
+                        title: 'Financial Feasibility & Business Valuation Support',
+                        subtitle: ''
+                      },
+                      {
+                        title: 'Risk Assessment & Internal Control Frameworks',
+                        subtitle: ''
+                      }
+                    ].map((item) => (
+                      <li key={item.title} className="py-4">
+                        <div className="flex items-center gap-3 text-[#433b33]">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#E8531A]" />
+                          <div>
+                            <span className="text-sm">{item.title}</span>
+                            {item.subtitle && (
+                              <span className="text-xs text-[#433b33]/80 block mt-1">{item.subtitle}</span>
+                            )}
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+
+              {/* Middle image + CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div
+                  className="rounded-xl overflow-hidden shadow-md bg-[#e0d4bf] relative"
+                  style={{ aspectRatio: '16/9' }}
+                >
+                  <Image src="/service3.webp" alt="Strategic finance consultation" fill className="object-cover" />
+                </div>
+                <Link
+                  href="/contact"
+                  className="mt-4 inline-flex w-full items-center justify-center rounded-xl bg-[#E8531A] text-white text-sm font-medium py-3 shadow-sm hover:bg-[#cf4510] transition-colors"
+                >
+                  Book a free consultation
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </motion.div>
+
+              {/* Right finance services list */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                viewport={{ once: true }}
+              >
+                <div>
+                  <ul className="divide-y divide-[#e5dfd2] rounded-lg overflow-hidden bg-transparent">
+                    {[
+                      {
+                        title: 'Investor Pitch & Fundraising Support',
+                        subtitle: '(Financial Models, Projections & Due-Diligence Assistance)'
+                      },
+                      {
+                        title: 'Growth Strategy & Market Expansion Advisory',
+                        subtitle: ''
+                      }
+                    ].map((item) => (
+                      <li key={item.title} className="py-4">
+                        <div className="flex items-center gap-3 text-[#433b33]">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#E8531A]" />
+                          <div>
+                            <span className="text-sm">{item.title}</span>
+                            {item.subtitle && (
+                              <span className="text-xs text-[#433b33]/80 block mt-1">{item.subtitle}</span>
+                            )}
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Methodology Section */}
+      <section className="py-8 sm:py-12 bg-[#f5f1e6]">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-5xl mx-auto">
+            <motion.h2
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="mt-8 text-xl sm:text-2xl lg:text-3xl font-light text-[#1B263B] text-center"
+            >
+              Our Methodology
+            </motion.h2>
+
+            <motion.h3
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.05 }}
+              viewport={{ once: true }}
+              className="mt-14 text-xl sm:text-2xl font-light text-[#1B263B] text-center"
+            >
+              How our financial planning works
+            </motion.h3>
+
+            <motion.h4
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.05 }}
+              viewport={{ once: true }}
+              className="mt-2 text-sm sm:text-base font-light text-[#433b33] text-center"
+            >
+              Acco Crunch PRO-Core™ (Professional Regulatory Operations System)
+            </motion.h4>
+
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.05 }}
+              viewport={{ once: true }}
+              className="mt-3 text-center text-xs sm:text-sm text-[#433b33] opacity-80 max-w-3xl mx-auto"
+            >
+              Our structured methodology ensures clarity, reduces risks, enhances compliance, and supports business decisions with consistent guidance.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="mt-10 space-y-1 sm:space-y-2"
+            >
+              {/* Row 1: 1 | blank | 2 | blank */}
+              <div className="grid md:grid-cols-[1.1fr_0.6fr_1.5fr_0.6fr] gap-1 sm:gap-2">
+                {/* Step 1 - Client Onboarding */}
+                <div className="rounded-md bg-transparent border border-[#e3ddcf] flex items-center px-2 py-2 sm:px-2 sm:py-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-md bg-white border border-[#f0e6d5] flex items-center justify-center text-base sm:text-lg font-medium text-[#E8531A]">
+                      1
+                    </div>
+                    <div className="text-xs sm:text-sm text-[#1B263B]">Client Onboarding</div>
+                  </div>
+                </div>
+
+                {/* Placeholder */}
+                <div className="hidden md:block rounded-xl bg-[#e9e1d1]" />
+
+                {/* Step 2 - Compliance Mapping */}
+                <div className="rounded-md bg-transparent border border-[#e3ddcf] flex items-center px-2 py-2 sm:px-2 sm:py-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-md bg-white border border-[#f0e6d5] flex items-center justify-center text-base sm:text-lg font-medium text-[#E8531A]">
+                      2
+                    </div>
+                    <div className="text-xs sm:text-sm text-[#1B263B]">Compliance Mapping</div>
+                  </div>
+                </div>
+
+                {/* Placeholder */}
+                <div className="hidden md:block rounded-xl bg-[#e9e1d1]" />
+              </div>
+
+              {/* Row 2: 3 | blank | 4 */}
+              <div className="grid md:grid-cols-[1.6fr_1fr_1.6fr] gap-1 sm:gap-2">
+                {/* Step 3 - Structural Planning */}
+                <div className="rounded-md bg-transparent border border-[#e3ddcf] flex items-center px-2 py-2 sm:px-2 sm:py-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-md bg-white border border-[#f0e6d5] flex items-center justify-center text-base sm:text-lg font-medium text-[#E8531A]">
+                      3
+                    </div>
+                    <div className="text-xs sm:text-sm text-[#1B263B]">Structural Planning</div>
+                  </div>
+                </div>
+
+                {/* Placeholder */}
+                <div className="hidden md:block rounded-xl bg-[#e9e1d1]" />
+
+                {/* Step 4 - Process Implementation */}
+                <div className="rounded-md bg-transparent border border-[#e3ddcf] flex items-center px-2 py-2 sm:px-2 sm:py-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-md bg-white border border-[#f0e6d5] flex items-center justify-center text-base sm:text-lg font-medium text-[#E8531A]">
+                      4
+                    </div>
+                    <div className="text-xs sm:text-sm text-[#1B263B]">Process Implementation</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Row 3: blank | 5 | blank | 6 */}
+              <div className="grid md:grid-cols-[0.7fr_1fr_0.7fr_0.7fr] gap-1 sm:gap-2">
+                {/* Placeholder */}
+                <div className="hidden md:block rounded-xl bg-[#e9e1d1]" />
+
+                {/* Step 5 - Dedicated Consultant */}
+                <div className="rounded-md bg-transparent border border-[#e3ddcf] flex items-center px-2 py-2 sm:px-2 sm:py-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-md bg-white border border-[#f0e6d5] flex items-center justify-center text-base sm:text-lg font-medium text-[#E8531A]">
+                      5
+                    </div>
+                    <div className="text-xs sm:text-sm text-[#1B263B]">Dedicated Consultant</div>
+                  </div>
+                </div>
+
+                {/* Placeholder */}
+                <div className="hidden md:block rounded-xl bg-[#e9e1d1]" />
+
+                {/* Step 6 - Ongoing Assurance */}
+                <div className="rounded-md bg-transparent border border-[#e3ddcf] flex items-center px-2 py-2 sm:px-2 sm:py-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-md bg-white border border-[#f0e6d5] flex items-center justify-center text-base sm:text-lg font-medium text-[#E8531A]">
+                      6
+                    </div>
+                    <div className="text-xs sm:text-sm text-[#1B263B]">Ongoing A  free Assurance</div>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-[#f5f1e6]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <SectionTitle
-              subtitle="Service Process"
-              title="How We Work With You"
-              description="A transparent, collaborative approach that ensures alignment and delivers results."
-            />
-            <div className="grid md:grid-cols-4 gap-8 mt-16">
-              {[
-                {
-                  step: '01',
-                  title: 'Discovery',
-                  description:
-                    'Deep dive into your business to understand challenges and opportunities',
-                },
-                {
-                  step: '02',
-                  title: 'Strategy',
-                  description:
-                    'Develop customized roadmap aligned with your goals and resources',
-                },
-                {
-                  step: '03',
-                  title: 'Execution',
-                  description:
-                    'Implement solutions with hands-on support and change management',
-                },
-                {
-                  step: '04',
-                  title: 'Optimization',
-                  description:
-                    'Monitor results and refine approaches for continuous improvement',
-                },
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="relative"
-                >
-                  <div className="text-6xl font-bold text-[#F4C542]/20 mb-4">
-                    {item.step}
-                  </div>
-                  <h3 className="text-2xl font-bold text-[#1B263B] mb-3">
-                    {item.title}
+      {/* Testimonial Carousel under Our Methodology */}
+      <section className="pb-16 bg-[#f5f1e6]">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-5xl mx-auto mt-12 sm:mt-16 rounded-lg overflow-hidden shadow-md bg-[#1c1b1a] min-h-[300px] md:min-h-[380px]">
+            {/* Mobile layout: image on top, content below */}
+            <div className="md:hidden">
+              {/* Image section */}
+              <div className="relative h-48 bg-black">
+                <Image
+                  src="/service3.webp"
+                  alt="Client testimonial"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+              </div>
+
+              {/* Content section below image */}
+              <div className="bg-[#181716] text-white px-6 py-6">
+                <div className="text-lg font-light mb-2">{testimonials[currentTestimonial].name}</div>
+                <p className="text-sm text-white/80 mb-4">
+                  {testimonials[currentTestimonial].company}
+                </p>
+                <h3 className="text-base font-light">
+                  "{testimonials[currentTestimonial].review}"
+                </h3>
+              </div>
+            </div>
+
+            {/* Desktop layout: side by side */}
+            <div className="hidden md:flex md:flex-row min-h-[380px]">
+              {/* Left stats panel - now testimonial info */}
+              <div className="w-full md:w-1/3 bg-[#181716] text-white px-6 sm:px-8 py-6 sm:py-8 flex flex-col justify-end">
+                <div>
+                  <div className="text-lg sm:text-xl font-light">{testimonials[currentTestimonial].name}</div>
+                  <p className="mt-2 text-xs sm:text-sm text-white/80">
+                    {testimonials[currentTestimonial].company}
+                  </p>
+                </div>
+              </div>
+
+              {/* Right image + copy - now testimonial review */}
+              <div className="relative w-full md:w-2/3 bg-black">
+                <div className="absolute inset-0">
+                  <Image
+                    src="/service3.webp"
+                    alt="Client testimonial"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
+                </div>
+
+                <div className="relative h-full px-6 sm:px-8 py-6 sm:py-8 flex flex-col justify-end text-white">
+                  <h3 className="text-sm sm:text-base font-light">
+                    "{testimonials[currentTestimonial].review}"
                   </h3>
-                  <p className="text-gray-600">{item.description}</p>
-                  {index < 3 && (
-                    <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-[#F4C542]/30"></div>
-                  )}
-                </motion.div>
-              ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-[#f5f1e6]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#1B263B] mb-6">
-              Ready to Get Started?
-            </h2>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Schedule a complimentary consultation to discuss your business challenges
-              and explore how our services can drive meaningful results.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-[#F4C542] text-[#1B263B] px-8 py-4 rounded-lg font-semibold hover:bg-[#e5b835] transition-all duration-300 hover:scale-105"
-            >
-              Contact Us Today
-              <ArrowRight size={20} />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Pricing Plans moved from Home */}
-      <section className="py-20 bg-[#f5f1e6]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle
-            subtitle="Pricing Plans"
-            title="Flexible Solutions for Every Budget"
-            description="Choose a plan that fits your needs and scales with your growth."
-          />
-          <div className="grid md:grid-cols-3 gap-8 mt-16">
-            {pricing.map((plan, index) => (
-              <PricingCard key={index} {...plan} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Metrics />
       <Footer />
     </div>
   );

@@ -13,7 +13,7 @@ export default function Footer() {
             How can we help?
           </h3>
 
-          <div className="flex-1 w-full flex justify-start">
+          <div className="flex-1 w-full flex justify-center">
             <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-xs sm:text-sm">
               <Link href="/contact" className="hover:text-[#F4C542] whitespace-nowrap">Contact</Link>
               <a href="mailto:hello.accocrunch@gmail.com" className="hover:text-[#F4C542] break-all sm:break-normal">
