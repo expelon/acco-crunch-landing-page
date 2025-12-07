@@ -186,7 +186,7 @@ export default function Home() {
                   className="pr-0 md:pr-8"
                 >
                   <h4 className="text-lg font-semibold text-[#f5f1e6]">Integrated business approach</h4>
-                  <p className="mt-2 text-white/70">More than company registration—strategic planning for compliance, taxation, and business stability.</p>
+                  <p className="mt-2 text-white/70">More than company registration strategic planning for compliance, taxation, and business stability.</p>
                 </motion.div>
 
                 <motion.div
