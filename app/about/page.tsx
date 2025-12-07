@@ -140,17 +140,17 @@ export default function AboutPage() {
 
               <motion.div
                 variants={fadeUp}
-                className="rounded-lg bg-white shadow-sm border border-gray-100 grid grid-cols-3 divide-x divide-gray-300 divide-opacity-70 px-6 py-7 sm:py-8"
+                className="rounded-lg bg-white shadow-sm border border-gray-100 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-300 divide-opacity-70 px-4 py-5 sm:px-6 sm:py-8 gap-3 sm:gap-0"
               >
-                {[ 
+                {[
                   { label: 'Businesses incorporated', value: '1,200+' },
                   { label: 'Compliance filings processed', value: '5,000+' },
                   { label: 'Years of experience', value: '6+' },
                 ].map((s) => (
-                  <div key={s.label} className="px-4 flex items-center">
-                    <div className="text-left">
+                  <div key={s.label} className="px-2 sm:px-4 py-3 sm:py-0 flex items-center justify-center sm:justify-start text-center sm:text-left">
+                    <div>
                       <div className={`text-base sm:text-lg font-light text-[#E8531A] ${numberPoppins.className}`}>{s.value}</div>
-                      <div className="mt-1 text-sm text-[#1B263B]/80 leading-snug max-w-[10rem]">{s.label}</div>
+                      <div className="mt-1 text-sm text-[#1B263B]/80 leading-snug max-w-xs sm:max-w-[10rem]">{s.label}</div>
                     </div>
                   </div>
                 ))}
