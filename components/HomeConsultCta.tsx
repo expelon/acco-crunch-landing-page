@@ -73,14 +73,15 @@ export default function HomeConsultCta() {
                 type="email"
                 required
                 placeholder="Enter your email"
-                className="flex-1 px-3 sm:px-4 py-3 outline-none text-sm sm:text-base text-[#1B263B] placeholder-gray-500"
+                className="flex-1 px-3 py-3 outline-none text-sm text-[#1B263B] placeholder-gray-500 min-w-0"
               />
               <button
                 type="submit"
-                className="px-4 sm:px-5 bg-[#E8531A] text-white hover:bg-[#c74512] transition-colors flex items-center justify-center min-w-[48px]"
+                className="px-3 bg-[#E8531A] text-white hover:bg-[#c74512] transition-colors flex items-center justify-center flex-shrink-0"
+                style={{ minWidth: '44px', minHeight: '44px' }}
                 aria-label="Subscribe"
               >
-                <ArrowRight className="w-4 h-4 flex-shrink-0" />
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </form>
