@@ -79,14 +79,14 @@ export default function PartnershipsPage() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.4 }}
-              className="grid md:grid-cols-[1.3fr_1fr] gap-2 lg:gap-3"
+              className="grid grid-cols-2 md:grid-cols-[1.3fr_1fr] gap-2 lg:gap-3"
             >
               <motion.div
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.4 }}
-                className="relative h-[280px] sm:h-[340px] lg:h-[400px] rounded-lg overflow-hidden shadow-md"
+                className="relative h-[180px] sm:h-[260px] lg:h-[400px] rounded-lg overflow-hidden shadow-md"
               >
                 <motion.div
                   initial={{ scale: 1 }}
@@ -110,7 +110,7 @@ export default function PartnershipsPage() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.4 }}
-                className="relative h-[280px] sm:h-[340px] lg:h-[400px] rounded-lg overflow-hidden shadow-md"
+                className="relative h-[180px] sm:h-[260px] lg:h-[400px] rounded-lg overflow-hidden shadow-md"
               >
                 <motion.div
                   initial={{ scale: 1 }}
@@ -139,7 +139,7 @@ export default function PartnershipsPage() {
             >
               <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-6 lg:gap-8 items-center">
                 {/* Left side: heading */}
-                <div>
+                <div className="text-center md:text-left">
                   <h3 className="text-xl sm:text-2xl font-light text-[#1B263B] leading-snug">
                     Partnerships built on trust
                   </h3>
