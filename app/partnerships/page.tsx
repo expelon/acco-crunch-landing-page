@@ -2,11 +2,11 @@
 
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { motion, easeOut } from 'framer-motion';
+import { motion, easeOut, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Handshake, Users, Target, TrendingUp, Award, Plus, Minus } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -41,6 +41,23 @@ const heroRight = {
 
 export default function PartnershipsPage() {
   const [expandedItems, setExpandedItems] = useState<number[]>([]);
+
+  // Scroll-based image scale for hero images (same behavior as home page image zoom)
+  const leftHeroImgRef = useRef<HTMLDivElement | null>(null);
+  const rightHeroImgRef = useRef<HTMLDivElement | null>(null);
+
+  const { scrollYProgress: leftHeroScroll } = useScroll({
+    target: leftHeroImgRef,
+    offset: ['start end', 'end start'],
+  });
+
+  const { scrollYProgress: rightHeroScroll } = useScroll({
+    target: rightHeroImgRef,
+    offset: ['start end', 'end start'],
+  });
+
+  const leftHeroScale = useTransform(leftHeroScroll, [0, 1], [1, 1.1]);
+  const rightHeroScale = useTransform(rightHeroScroll, [0, 1], [1, 1.1]);
 
   return (
     <div className="min-h-screen">
@@ -89,11 +106,9 @@ export default function PartnershipsPage() {
                 className="relative h-[180px] sm:h-[260px] lg:h-[400px] rounded-lg overflow-hidden shadow-md"
               >
                 <motion.div
-                  initial={{ scale: 1 }}
-                  whileInView={{ scale: 1.02 }}
-                  viewport={{ once: true, amount: 0.9 }}
-                  transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  ref={leftHeroImgRef}
                   className="relative w-full h-full"
+                  style={{ scale: leftHeroScale }}
                 >
                   <Image
                     src="/partnership1.webp"
@@ -113,11 +128,9 @@ export default function PartnershipsPage() {
                 className="relative h-[180px] sm:h-[260px] lg:h-[400px] rounded-lg overflow-hidden shadow-md"
               >
                 <motion.div
-                  initial={{ scale: 1 }}
-                  whileInView={{ scale: 1.02 }}
-                  viewport={{ once: true, amount: 0.9 }}
-                  transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  ref={rightHeroImgRef}
                   className="relative w-full h-full"
+                  style={{ scale: rightHeroScale }}
                 >
                   <Image
                     src="/partnership2.jpg"
