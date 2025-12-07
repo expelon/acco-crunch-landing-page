@@ -3,13 +3,10 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
-import ServiceCard from '@/components/ServiceCard';
-import SectionTitle from '@/components/SectionTitle';
 import SectorShowcase from '@/components/SectorShowcase';
 import Metrics from '@/components/Metrics';
 import ConsultCta from '@/components/ConsultCta';
 import CaseStudies from '@/components/CaseStudies';
-import { services } from '@/lib/data';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, BarChart3, ReceiptCent, LineChart } from 'lucide-react';
 import Link from 'next/link';
@@ -234,31 +231,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-[#f5f1e6]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle
-            subtitle="Our Services"
-            title="Comprehensive Solutions for Every Challenge"
-            description="We offer a full spectrum of consulting services designed to address your unique business needs and drive measurable results."
-          />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-            {services.map((service, index) => (
-              <ServiceCard key={index} {...service} index={index} />
-            ))}
-          </div>
-
-          <div className="mt-10 flex justify-center">
-            <Link
-              href="/services"
-              className="group inline-flex items-center gap-2 bg-[#E8531A] hover:bg-[#1B263B] text-white px-7 py-[14px] rounded-xl font-normal shadow-md transition-colors duration-300 ease-out"
-            >
-              Explore more
-              <ArrowRight size={18} className="transition-transform duration-300 ease-out group-hover:translate-x-[6px] group-hover:scale-110" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
+      
       {/* Sector showcase placed under the Explore more button */}
       <section className="py-8 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

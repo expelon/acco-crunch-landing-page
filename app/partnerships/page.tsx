@@ -49,72 +49,44 @@ export default function PartnershipsPage() {
       {/* Hero */}
       <section className="pt-10 sm:pt-14 pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
-            {/* Left: Copy + Social proof + CTA */}
+          <div className="space-y-2 lg:space-y-3">
+            {/* Top row: heading left, paragraph right */}
+            <div className="grid md:grid-cols-2 gap-6 lg:gap-10 items-start">
+              <motion.h1
+                variants={heroLeft}
+                initial="hidden"
+                animate="show"
+                className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#1B263B] tracking-normal leading-snug lg:leading-tight"
+              >
+                Collaboration that strengthens
+                <br className="hidden sm:block" />
+                services and client satisfaction
+              </motion.h1>
+
+              <motion.p
+                variants={heroRight}
+                initial="hidden"
+                animate="show"
+                className="text-sm sm:text-base text-[#433b33] leading-relaxed max-w-md md:ml-auto"
+              >
+                Gain trusted backend support, expand advisory solutions, and increase client value with our proven expertise, strict confidentiality, and structured service delivery excellence.
+              </motion.p>
+            </div>
+
+            {/* Middle row: two images below heading/paragraph */}
             <motion.div
-              variants={heroLeft}
+              variants={fadeUp}
               initial="hidden"
-              animate="show"
-              className="space-y-8"
-            >
-              <div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#1B263B] tracking-normal leading-normal md:leading-snug lg:leading-tight">
-                  Collaboration that
-                  <br className="hidden sm:block" />
-                  strengthens services <br />and client satisfaction
-                </h1>
-                <p className="mt-5 text-sm sm:text-base text-[#433b33] leading-relaxed max-w-md">
-                  Gain trusted backend support, expand advisory solutions, and increase client value with our proven expertise, strict confidentiality, and structured service delivery excellence.
-                </p>
-              </div>
-
-              <div className="space-y-6 mt-6">
-                <div className="flex items-start gap-4">
-                  <div>
-                    <div className="flex items-center mb-3">
-                      <div className="flex -space-x-2">
-                        {['/p1.webp', '/p2.webp', '/p3.webp', '/p4.webp'].map((src, idx) => (
-                          <div
-                            key={src}
-                            className="w-9 h-9 rounded-full overflow-hidden border border-[#f5f1e6] shadow-sm bg-[#e0d4bf]"
-                            style={{ zIndex: 10 - idx }}
-                          >
-                            <Image
-                              src={src}
-                              alt={`Partner profile ${idx + 1}`}
-                              width={36}
-                              height={36}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    <h4 className="text-base sm:text-lg font-light text-[#1B263B] tracking-[0.08em] mb-1">75+ Strategic Partners</h4>
-                    <p className="text-sm text-[#6f645a]">Trusted Acco Crunch expanding services and client value.</p>
-                  </div>
-                </div>
-
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-lg bg-[#E8531A] px-6 py-3 text-sm sm:text-base font-medium text-white shadow-sm hover:bg-[#cf4510] transition-colors w-full sm:w-auto"
-                >
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
-            </motion.div>
-
-            {/* Right: Image + Stats card */}
-            <motion.div
-              variants={heroRight}
-              initial="hidden"
-              animate="show"
-              className="space-y-2"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.4 }}
+              className="grid md:grid-cols-[1.3fr_1fr] gap-2 lg:gap-3"
             >
               <motion.div
                 variants={fadeUp}
-                className="relative h-[260px] sm:h-[320px] lg:h-[380px] rounded-lg overflow-hidden shadow-md bg-[#e0d4bf]"
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.4 }}
+                className="relative h-[280px] sm:h-[340px] lg:h-[400px] rounded-lg overflow-hidden shadow-md"
               >
                 <Image
                   src="/partnership1.webp"
@@ -123,26 +95,68 @@ export default function PartnershipsPage() {
                   priority
                   className="object-cover"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-28 sm:h-32 bg-gradient-to-t from-[#2b2118]/90 via-[#2b2118]/70 to-transparent" />
               </motion.div>
 
               <motion.div
                 variants={fadeUp}
-                className="rounded-lg bg-white shadow-sm border border-gray-100 grid grid-cols-3 divide-x divide-gray-300 divide-opacity-70 px-6 py-7 sm:py-8"
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.4 }}
+                className="relative h-[280px] sm:h-[340px] lg:h-[400px] rounded-lg overflow-hidden shadow-md"
               >
-                {[ 
-                  { label: 'Strategic partnerships', value: '75+' },
-                  { label: 'Clients served', value: '500+' },
-                  { label: 'Years of excellence', value: '6+' },
-                ].map((s) => (
-                  <div key={s.label} className="px-4 flex items-center">
-                    <div className="text-left">
-                      <div className="text-base sm:text-lg font-light text-[#E8531A]">{s.value}</div>
-                      <div className="mt-1 text-sm text-[#1B263B]/80 leading-snug max-w-[10rem]">{s.label}</div>
+                <Image
+                  src="/partnership2.jpg"
+                  alt="Partners collaborating in meeting"
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+            </motion.div>
+
+            {/* Rectangle container below images */}
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.4 }}
+              className="bg-[#f0e8dc] rounded-lg p-6 sm:p-8 border border-black/5"
+            >
+              <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-6 lg:gap-8 items-center">
+                {/* Left side: heading */}
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-light text-[#1B263B] leading-snug">
+                    Partnerships built on trust
+                  </h3>
+                </div>
+
+                {/* Right side: 3 points */}
+                <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-end">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="text-lg sm:text-xl font-semibold text-[#E8531A]">
+                      1,200+
+                    </div>
+                    <div className="text-sm sm:text-base text-[#433b33]">
+                      Businesses incorporated
                     </div>
                   </div>
-                ))}
-              </motion.div>
+                  <div className="flex flex-col items-center text-center">
+                    <div className="text-lg sm:text-xl font-semibold text-[#E8531A]">
+                      5,000+
+                    </div>
+                    <div className="text-sm sm:text-base text-[#433b33]">
+                      Compliance filings processed
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center text-center">
+                    <div className="text-lg sm:text-xl font-semibold text-[#E8531A]">
+                      6 +
+                    </div>
+                    <div className="text-sm sm:text-base text-[#433b33]">
+                      Years of experience
+                    </div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
