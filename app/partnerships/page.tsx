@@ -88,13 +88,21 @@ export default function PartnershipsPage() {
                 viewport={{ once: true, amount: 0.4 }}
                 className="relative h-[280px] sm:h-[340px] lg:h-[400px] rounded-lg overflow-hidden shadow-md"
               >
-                <Image
-                  src="/partnership1.webp"
-                  alt="Partners collaborating"
-                  fill
-                  priority
-                  className="object-cover"
-                />
+                <motion.div
+                  initial={{ scale: 1 }}
+                  whileInView={{ scale: 1.02 }}
+                  viewport={{ once: true, amount: 0.9 }}
+                  transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  className="relative w-full h-full"
+                >
+                  <Image
+                    src="/partnership1.webp"
+                    alt="Partners collaborating"
+                    fill
+                    priority
+                    className="object-cover"
+                  />
+                </motion.div>
               </motion.div>
 
               <motion.div
@@ -104,12 +112,20 @@ export default function PartnershipsPage() {
                 viewport={{ once: true, amount: 0.4 }}
                 className="relative h-[280px] sm:h-[340px] lg:h-[400px] rounded-lg overflow-hidden shadow-md"
               >
-                <Image
-                  src="/partnership2.jpg"
-                  alt="Partners collaborating in meeting"
-                  fill
-                  className="object-cover"
-                />
+                <motion.div
+                  initial={{ scale: 1 }}
+                  whileInView={{ scale: 1.02 }}
+                  viewport={{ once: true, amount: 0.9 }}
+                  transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  className="relative w-full h-full"
+                >
+                  <Image
+                    src="/partnership2.jpg"
+                    alt="Partners collaborating in meeting"
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
               </motion.div>
             </motion.div>
 
