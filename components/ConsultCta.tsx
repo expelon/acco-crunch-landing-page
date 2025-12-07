@@ -49,17 +49,18 @@ export default function ConsultCta() {
             Get monthly strategies, tax updates, and business tips straight to your inbox.
           </p>
 
-          <form className="w-full md:w-auto md:min-w-[360px]">
+          <form className="w-full md:w-auto">
             <div className="flex items-stretch bg-white rounded-xl overflow-hidden">
               <input
                 type="email"
                 required
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 outline-none text-sm sm:text-base text-[#1B263B] placeholder-gray-500"
+                className="flex-1 px-3 py-3 outline-none text-sm text-[#1B263B] placeholder-gray-500 min-w-0"
               />
               <button
                 type="submit"
-                className="px-5 sm:px-6 bg-[#E8531A] text-white hover:bg-[#c74512] transition-colors flex items-center justify-center"
+                className="px-3 bg-[#E8531A] text-white hover:bg-[#c74512] transition-colors flex items-center justify-center flex-shrink-0"
+                style={{ minWidth: '44px', minHeight: '44px' }}
                 aria-label="Subscribe"
               >
                 <ArrowRight className="w-4 h-4" />
