@@ -5,7 +5,7 @@ import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import SectorShowcase from '@/components/SectorShowcase';
 import Metrics from '@/components/Metrics';
-import ConsultCta from '@/components/ConsultCta';
+import HomeConsultCta from '@/components/HomeConsultCta';
 import CaseStudies from '@/components/CaseStudies';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, BarChart3, ReceiptCent, LineChart } from 'lucide-react';
@@ -241,7 +241,7 @@ export default function Home() {
 
       <Metrics />
 
-      <ConsultCta />
+      <HomeConsultCta />
 
       <CaseStudies />
 
