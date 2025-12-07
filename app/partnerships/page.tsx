@@ -56,7 +56,7 @@ export default function PartnershipsPage() {
                 variants={heroLeft}
                 initial="hidden"
                 animate="show"
-                className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#1B263B] tracking-normal leading-snug lg:leading-tight"
+                className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#1B263B] tracking-normal leading-snug lg:leading-tight mb-8"
               >
                 Collaboration that strengthens
                 <br className="hidden sm:block" />
@@ -67,7 +67,7 @@ export default function PartnershipsPage() {
                 variants={heroRight}
                 initial="hidden"
                 animate="show"
-                className="text-sm sm:text-base text-[#433b33] leading-relaxed max-w-md md:ml-auto"
+                className="text-sm sm:text-base text-[#433b33] leading-relaxed max-w-md md:ml-auto mb-8"
               >
                 Gain trusted backend support, expand advisory solutions, and increase client value with our proven expertise, strict confidentiality, and structured service delivery excellence.
               </motion.p>
