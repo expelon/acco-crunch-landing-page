@@ -62,7 +62,7 @@ export default function Home() {
           >
             <motion.h2
               variants={{ hidden: { opacity: 0, y: headY }, show: { opacity: 1, y: 0, transition: { duration: headDur, ease: [0.16, 1, 0.3, 1] } } }}
-              className="text-3xl sm:text-4xl font-semibold text-[#1B263B] tracking-tight"
+              className="text-3xl sm:text-4xl font-light text-[#1B263B] tracking-tight leading-snug"
             >
               Strategic expertise for confident decisions and assured, sustainable business scaling.
             </motion.h2>
@@ -172,7 +172,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: 'easeOut' }}
                 viewport={{ once: true }}
-                className="text-2xl sm:text-3xl font-semibold"
+                className="text-2xl sm:text-3xl font-light"
               >
                 Why we’re the right choice
               </motion.h3>

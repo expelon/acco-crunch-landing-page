@@ -13,7 +13,7 @@ export default function Metrics() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl font-semibold text-[#1B263B]"
+            className="text-3xl sm:text-4xl font-light text-[#1B263B] leading-snug"
           >
             Driving meaningful results through measurable financial performance
           </motion.h2>
@@ -79,7 +79,7 @@ export default function Metrics() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-center md:pl-8"
           >
-            <div className="text-3xl font-bold text-[#E8531A]">₹80Cr+</div>
+            <div className="text-3xl font-bold text-[#E8531A]">₹100Cr+</div>
             <div className="mt-2 inline-block rounded-xl overflow-hidden bg-white shadow-sm w-[180px] h-[120px]">
               <Image
                 src="/tax.webp"
