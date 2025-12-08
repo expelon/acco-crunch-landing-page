@@ -212,6 +212,10 @@ export default function ServicesPage() {
                     subtitle: '(Search, Filing, Objection Management)'
                   },
                   {
+                    title: 'ISO Registration & Certification',
+                    subtitle: ''
+                  },
+                  {
                     title: 'Post-Incorporation Compliance & Advisory',
                     subtitle: ''
                   }
@@ -632,7 +636,7 @@ export default function ServicesPage() {
                     <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-md bg-white border border-[#f0e6d5] flex items-center justify-center text-base sm:text-lg font-medium text-[#E8531A]">
                       6
                     </div>
-                    <div className="text-xs sm:text-sm text-[#1B263B]">Ongoing A  free Assurance</div>
+                    <div className="text-xs sm:text-sm text-[#1B263B]">Ongoing Assurance</div>
                   </div>
                 </div>
               </div>

@@ -97,10 +97,10 @@ export default function ContactPage() {
                     </div>
                     <div className="mt-auto">
                       <a
-                        href="tel:+15551234567"
+                        href="tel:+918089200829"
                         className="text-[#433b33] hover:text-[#E8531A] transition-colors text-sm pl-15 block"
                       >
-                        +1 (555) 123-4567
+                        +91 80892 00829
                       </a>
                     </div>
                   </div>
@@ -114,10 +114,10 @@ export default function ContactPage() {
                     </div>
                     <div className="mt-auto">
                       <a
-                        href="mailto:info@accocrunch.com"
+                        href="mailto:hello.accocrunch@gmail.com"
                         className="text-[#433b33] hover:text-[#E8531A] transition-colors text-sm pl-15 block"
                       >
-                        info@accocrunch.com
+                        hello.accocrunch@gmail.com
                       </a>
                     </div>
                   </div>
@@ -131,8 +131,10 @@ export default function ContactPage() {
                     </div>
                     <div className="mt-auto">
                       <p className="text-[#433b33] text-sm leading-relaxed pl-15">
-                        123 Business Avenue<br />
-                        Suite 500, New York
+                        Acco Crunch<br />
+                        Third Floor, City Centre Building,<br />
+                        Vellayambalam, Thiruvananthapuram,<br />
+                        Kerala – 695010
                       </p>
                     </div>
                   </div>
