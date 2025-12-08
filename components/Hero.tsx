@@ -119,7 +119,7 @@ export default function Hero() {
             className="relative"
           >
             <div className="relative w-full h-[320px] sm:h-[420px] lg:h-[560px] rounded-2xl overflow-hidden">
-              <Image src="/img 1.png" alt="Hero visual" fill priority className="object-cover" />
+              <Image src="/home1.webp" alt="Hero visual" fill priority className="object-cover" />
             </div>
           </motion.div>
         </div>
