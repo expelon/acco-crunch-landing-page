@@ -17,6 +17,7 @@ export default function Navbar() {
     { name: 'Services', href: '/services' },
     { name: 'Partnerships', href: '/partnerships' },
     { name: 'Career', href: '/career' },
+    { name: 'Insights', href: '/insights' },
     { name: 'Contact', href: '/contact' },
   ];
 
