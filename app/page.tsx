@@ -100,19 +100,19 @@ export default function Home() {
             </motion.div>
           </motion.div>
 
-          <div className="mt-12 grid md:grid-cols-3 gap-8">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true, amount: 0.3 }}
-              className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
+              className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100"
             >
-              <div className="w-16 h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-6">
-                <BarChart3 size={32} className="text-[#F4C542]" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                <BarChart3 size={28} className="sm:size-[32px] text-[#F4C542]" />
               </div>
-              <h3 className="text-2xl font-bold text-[#1B263B] mb-4">Precision-Led Advisory Excellence</h3>
-              <p className="text-gray-600 leading-relaxed">Delivering expert insights powered by up-to-date regulatory intelligence for assured decision-making.</p>
+              <h3 className="text-xl sm:text-2xl font-bold text-[#1B263B] mb-3 sm:mb-4">Precision-Led Advisory Excellence</h3>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Delivering expert insights powered by up-to-date regulatory intelligence for assured decision-making.</p>
             </motion.div>
 
             <motion.div
@@ -120,13 +120,13 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true, amount: 0.3 }}
-              className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
+              className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100"
             >
-              <div className="w-16 h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-6">
-                <ReceiptCent size={32} className="text-[#F4C542]" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                <ReceiptCent size={28} className="sm:size-[32px] text-[#F4C542]" />
               </div>
-              <h3 className="text-2xl font-bold text-[#1B263B] mb-4">Strategic Multi-Specialist Expertise</h3>
-              <p className="text-gray-600 leading-relaxed">Comprehensive guidance across tax, legal, accounting, and business strategy to drive stronger business outcomes.</p>
+              <h3 className="text-xl sm:text-2xl font-bold text-[#1B263B] mb-3 sm:mb-4">Strategic Multi-Specialist Expertise</h3>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Comprehensive guidance across tax, legal, accounting, and business strategy to drive stronger business outcomes.</p>
             </motion.div>
 
             <motion.div
@@ -134,13 +134,13 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true, amount: 0.3 }}
-              className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
+              className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100 sm:col-span-2 lg:col-span-1"
             >
-              <div className="w-16 h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-6">
-                <LineChart size={32} className="text-[#F4C542]" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#f5f1e6] rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                <LineChart size={28} className="sm:size-[32px] text-[#F4C542]" />
               </div>
-              <h3 className="text-2xl font-bold text-[#1B263B] mb-4">Efficient Client Governance</h3>
-              <p className="text-gray-600 leading-relaxed">Structured portfolio management with transparency, strong data protection, and immediate compliance adoption.</p>
+              <h3 className="text-xl sm:text-2xl font-bold text-[#1B263B] mb-3 sm:mb-4">Efficient Client Governance</h3>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Structured portfolio management with transparency, strong data protection, and immediate compliance adoption.</p>
             </motion.div>
           </div>
         </div>

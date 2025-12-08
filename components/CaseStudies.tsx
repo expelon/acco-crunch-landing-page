@@ -74,14 +74,18 @@ export default function CaseStudies() {
     <section className="py-16 bg-[#f5f1e6]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header row */}
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <h2 className="mt-4 md:mt-6 text-3xl md:text-3xl leading-tight font-light text-[#1B263B]">
-            <span className="block md:whitespace-nowrap">Real-World case studies that showcase our</span>
-            <span className="block">strategic impact</span>
-          </h2>
-          <p className="mt-4 md:mt-6 text-gray-700 text-sm md:text-base leading-relaxed max-w-[360px] md:ml-auto md:justify-self-end">
-            Discover how our tailored accounting and consulting solutions delivered real-world business improvements.
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+          <div className="order-1 lg:order-1 text-center lg:text-left">
+            <h2 className="text-3xl sm:text-4xl lg:text-3xl leading-tight font-light text-[#1B263B]">
+              <span className="block">Real-World case studies</span>
+              <span className="block">that showcase our strategic impact</span>
+            </h2>
+          </div>
+          <div className="order-2 lg:order-2 text-center lg:text-left">
+            <p className="mt-2 lg:mt-6 text-gray-700 text-sm sm:text-base leading-relaxed max-w-full lg:max-w-[360px] mx-auto lg:mx-0 lg:ml-auto lg:justify-self-end">
+              Discover how our tailored accounting and consulting solutions delivered real-world business improvements.
+            </p>
+          </div>
         </div>
 
         {/* Two column cards */}
