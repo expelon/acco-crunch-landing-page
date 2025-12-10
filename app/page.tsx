@@ -47,6 +47,12 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#f5f1e6]">
+      {/* Yellow announcement section */}
+      <div className="bg-[#FFEB99] text-black py-2 px-4">
+        <div className="container mx-auto text-center text-sm">
+          Limited slots: Free 30-Minute consultation this week + <Link href="/contact" className="underline hover:no-underline">Join them now!</Link>
+        </div>
+      </div>
       <Navbar />
       <Hero />
 

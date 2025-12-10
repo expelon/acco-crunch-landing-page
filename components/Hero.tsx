@@ -56,7 +56,7 @@ export default function Hero() {
               </h1>
               <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-2xl lg:max-w-xl xl:max-w-lg text-left">
                 End-to-end Business Registration, Tax Advisory, Compliance & Legal Support for Startups,
-                Professionals, SMEs & Growth-Focused Companies.
+                Freelancers, SMEs & Growth-Focused Companies.
               </p>
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-left">
                 <div className="flex items-center gap-3">
@@ -117,7 +117,7 @@ export default function Hero() {
             className="relative"
           >
             <div className="relative w-full h-[320px] sm:h-[420px] lg:h-[560px] rounded-2xl overflow-hidden">
-              <Image src="/home2.webp" alt="Hero visual" fill priority className="object-cover" />
+              <Image src="/hero1.webp" alt="Hero visual" fill priority className="object-cover object-[center_top]" />
             </div>
           </motion.div>
         </div>

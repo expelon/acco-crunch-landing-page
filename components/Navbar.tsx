@@ -58,7 +58,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`w-full z-50 bg-[#f5f1e6] transition-all duration-300 ${scrolled ? 'shadow-md' : ''}`}>
+    <nav className={`w-full z-50 bg-[#f5f1e6] transition-all duration-300`}>
       <div className="container mx-auto px-3 sm:px-4 lg:px-8">
         <div className="flex items-center h-16 sm:h-18 lg:h-20">
           <div className="flex-1">
