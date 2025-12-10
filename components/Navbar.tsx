@@ -61,7 +61,7 @@ export default function Navbar() {
     <header className="w-full z-50 bg-[#f5f1e6]">
       <div className="bg-[#FFEB99] text-black py-2 px-4">
         <div className="container mx-auto text-center text-xs sm:text-sm">
-          Limited slots: Free 30-Minute consultation this week + <Link href="/contact" className="underline hover:no-underline">Join them now!</Link>
+          Limited slots: Free 30-Minute consultation this week → <Link href="/contact" className="underline hover:no-underline">Join them now!</Link>
         </div>
       </div>
 
