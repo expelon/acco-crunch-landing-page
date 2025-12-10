@@ -746,12 +746,224 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      
+      {/* Pricing Packages Section */}
+      <section className="py-12 sm:py-16 bg-[#f5f1e6]">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-5xl mx-auto text-center">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-light text-[#1B263B]">
+              Choose the right package for your growth
+            </h2>
+            <p className="mt-3 text-xs sm:text-sm text-[#433b33] opacity-80 max-w-2xl mx-auto">
+              Flexible plans designed for different stages of your business journey – from early setup to growth and advanced scale.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 sm:gap-7 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {/* Starter plan */}
+            <div className="rounded-2xl bg-[#faf7f0] border border-[#e3ddcf] shadow-sm px-6 py-7 flex flex-col h-full text-left">
+              <div className="flex items-start gap-3 mb-5">
+                <div className="w-9 h-9 rounded-lg bg-[#f0e6d5] flex items-center justify-center">
+                  <Shield className="w-5 h-5 text-[#E8531A]" />
+                </div>
+                <div>
+                  <h3 className="text-base sm:text-lg font-medium text-[#1B263B]">Foundation Suite</h3>
+                  <p className="text-xs sm:text-sm text-[#433b33] opacity-80 mt-1">
+                    Perfect for startups and small businesses.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mb-5 flex items-baseline gap-1">
+                <span className="text-2xl sm:text-3xl font-semibold text-[#1B263B]">₹4,999</span>
+                <span className="text-xs text-[#433b33] opacity-80">Onwards</span>
+              </div>
+
+              <Link
+                href="/contact"
+                className="mt-1 inline-flex items-center justify-center rounded-lg bg-[#1f1c19] text-white text-xs sm:text-sm font-medium px-4 py-2.5 shadow-sm hover:bg-black/90 transition-colors w-full"
+              >
+                Get started
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+
+              <ul className="mt-5 space-y-2 text-xs sm:text-sm text-[#433b33] flex-1">
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>GST / MSME Registration</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Basic Business Structuring</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Simple Agreement Drafts</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Monthly Accounting & GST Filing</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Annual Income Tax Filing</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Annual Tax Planning</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Half-Yearly Financial Review</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Business Upgrade Guidance</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Growth plan */}
+            <div className="rounded-2xl bg-[#faf7f0] border border-[#e3ddcf] shadow-sm px-6 py-7 flex flex-col h-full text-left">
+              <div className="flex items-start gap-3 mb-5 mt-1">
+                <div className="w-9 h-9 rounded-lg bg-[#f0e6d5] flex items-center justify-center">
+                  <TrendingUp className="w-5 h-5 text-[#E8531A]" />
+                </div>
+                <div>
+                  <h3 className="text-base sm:text-lg font-medium text-[#1B263B]">Professional Suite</h3>
+                  <p className="text-xs sm:text-sm text-[#433b33] opacity-80 mt-1">
+                    Designed for growing companies.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mb-5 flex items-baseline gap-1">
+                <span className="text-2xl sm:text-3xl font-semibold text-[#1B263B]">₹14,999</span>
+                <span className="text-xs text-[#433b33] opacity-80">Onwards</span>
+              </div>
+
+              <button className="mt-1 inline-flex items-center justify-center rounded-lg bg-[#1f1c19] text-white text-xs sm:text-sm font-medium px-4 py-2.5 shadow-sm hover:bg-black/90 transition-colors w-full">
+                Get started
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </button>
+
+              <ul className="mt-5 space-y-2 text-xs sm:text-sm text-[#433b33] flex-1">
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Partnership / LLP Agreement Advisory</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Vendor &amp; Employment Contract Drafts</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Full Monthly Accounting &amp; Bookkeeping</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>GST, TDS &amp; Income Tax Filings</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>ROC/LLP Annual Compliance</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Monthly MIS Reports with KPIs</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Quarterly Internal Control Review</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Capital Structuring &amp; Tax Optimization</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Quarterly CFO Strategy Call</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Enterprise plan */}
+            <div className="rounded-2xl bg-[#faf7f0] border border-[#e3ddcf] shadow-sm px-6 py-7 flex flex-col h-full text-left">
+              <div className="flex items-start gap-3 mb-5">
+                <div className="w-9 h-9 rounded-lg bg-[#f0e6d5] flex items-center justify-center">
+                  <Target className="w-5 h-5 text-[#E8531A]" />
+                </div>
+                <div>
+                  <h3 className="text-base sm:text-lg font-medium text-[#1B263B]">Executive Suite</h3>
+                  <p className="text-xs sm:text-sm text-[#433b33] opacity-80 mt-1">Tailored solutions for enterprises.</p>
+                </div>
+              </div>
+
+              <div className="mb-5 flex items-baseline gap-1">
+                <span className="text-2xl sm:text-3xl font-semibold text-[#1B263B]">₹19,999</span>
+                <span className="text-xs text-[#433b33] opacity-80">Onwards</span>
+              </div>
+
+              <Link
+                href="/contact"
+                className="mt-1 inline-flex items-center justify-center rounded-lg bg-[#1f1c19] text-white text-xs sm:text-sm font-medium px-4 py-2.5 shadow-sm hover:bg-black/90 transition-colors w-full"
+              >
+                Get started
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+
+              <ul className="mt-5 space-y-2 text-xs sm:text-sm text-[#433b33] flex-1">
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Incorporation &amp; MOA/AOA Review</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Founders &amp; Shareholder Agreements</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Trademark &amp; IP Support</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Dedicated Monthly Accounting</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>GST, TDS, PF/ESI &amp; ITR Filings</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Full ROC/MCA Compliance</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Monthly MIS + Budget vs Actuals</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Monthly CFO Strategy Meet</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Financial Models &amp; Projections</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#E8531A]" />
+                  <span>Fundraising &amp; Due-Diligence Support</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Testimonial Carousel under Our Methodology */}
       <section className="pb-16 bg-[#f5f1e6]">
         <div className="container mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-5xl mx-auto mt-12 sm:mt-16 rounded-lg overflow-hidden shadow-md bg-[#1c1b1a] min-h-[300px] md:min-h-[380px]">
-            {/* Mobile layout: image on top, content below */}
+          {/* Mobile layout: image on top, content below */}
             <div className="md:hidden">
               {/* Image section */}
               <div className="relative h-48 bg-black">
