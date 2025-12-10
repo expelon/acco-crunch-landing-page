@@ -49,7 +49,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="h-auto md:h-[560px] flex flex-col"
           >
-            <div className="bg-[#fdfcf5] rounded-2xl shadow-md px-5 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-10 pb-6 sm:pb-8 mb-0">
+            <div className="md:bg-transparent md:shadow-none md:rounded-none bg-[#fdfcf5] rounded-2xl shadow-md px-5 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-10 pb-6 sm:pb-8 mb-0">
               <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-medium text-[#1B263B] leading-tight tracking-wide mb-4">
                 <span className="block lg:mb-2">Making every business</span>
                 <span className="block">move a confident one</span>
@@ -117,7 +117,7 @@ export default function Hero() {
             className="relative"
           >
             <div className="relative w-full h-[320px] sm:h-[420px] lg:h-[560px] rounded-2xl overflow-hidden">
-              <Image src="/hero1.webp" alt="Hero visual" fill priority className="object-cover object-[center_top]" />
+              <Image src="/try.webp" alt="Hero visual" fill priority className="object-cover object-[center_top]" />
             </div>
           </motion.div>
         </div>
