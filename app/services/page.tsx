@@ -430,6 +430,45 @@ export default function ServicesPage() {
               ))}
             </div>
           </div>
+
+          {/* Additional payroll management row under packages */}
+          <div className="mt-8 max-w-xl sm:max-w-5xl mx-auto">
+            <div className="rounded-2xl bg-[#ece6d7] px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-sm">
+              <div className="flex items-center gap-3">
+                <svg
+                  className="w-6 h-6 text-[#E8531A] flex-shrink-0"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 3L4 9l8 12 8-12-8-6Z"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M12 3v18M4 9l8 4 8-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.4"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <p className="text-sm sm:text-base text-[#1B263B]">
+                  Payroll Management – ₹139/month per 10 employees
+                </p>
+              </div>
+
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-lg bg-white text-[#1B263B] text-xs sm:text-sm font-medium px-4 py-2.5 shadow-sm hover:bg-[#f5f1e6] transition-colors whitespace-nowrap"
+              >
+                Contact to sales
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -955,6 +994,45 @@ export default function ServicesPage() {
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+
+        {/* Additional payroll management row under packages */}
+        <div className="mt-8 max-w-5xl mx-auto">
+          <div className="rounded-2xl bg-[#ece6d7] px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 shadow-sm">
+            <div className="flex items-start sm:items-center gap-3 flex-1 min-w-0">
+              <svg
+                className="w-6 h-6 text-[#E8531A] flex-shrink-0"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 3L4 9l8 12 8-12-8-6Z"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M12 3v18M4 9l8 4 8-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <p className="text-sm sm:text-base text-[#1B263B] leading-snug text-left">
+                Business Structuring & Regulatory Advisory – ₹3,499 Onwards
+              </p>
+            </div>
+
+            <Link
+              href="/contact"
+              className="mt-1 sm:mt-0 inline-flex items-center justify-center rounded-lg bg-white text-[#1B263B] text-xs sm:text-sm font-medium px-4 py-2.5 shadow-sm hover:bg-[#f5f1e6] transition-colors whitespace-nowrap"
+            >
+              Contact Sales
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
