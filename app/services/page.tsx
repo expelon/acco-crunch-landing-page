@@ -268,7 +268,7 @@ export default function ServicesPage() {
                     <div className="flex items-center gap-3 text-[#433b33]">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#E8531A]" />
                       <div>
-                        <span className="text-sm">{item.title}</span>
+                        <span className="text-sm font-medium">{item.title}</span>
                         {item.subtitle && (
                           <span className="text-xs text-[#433b33]/80 block mt-1">{item.subtitle}</span>
                         )}
@@ -326,7 +326,7 @@ export default function ServicesPage() {
                     <div className="flex items-center gap-3 text-[#433b33]">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#E8531A]" />
                       <div>
-                        <span className="text-sm">{item.title}</span>
+                        <span className="text-sm font-medium">{item.title}</span>
                         {item.subtitle && (
                           <span className="text-xs text-[#433b33]/80 block mt-1">{item.subtitle}</span>
                         )}
@@ -535,7 +535,7 @@ export default function ServicesPage() {
                         <div className="flex items-center gap-3 text-[#433b33]">
                           <span className="w-1.5 h-1.5 rounded-full bg-[#E8531A]" />
                           <div>
-                            <span className="text-sm">{item.title}</span>
+                            <span className="text-sm font-medium">{item.title}</span>
                             {item.subtitle && (
                               <span className="text-xs text-[#433b33]/80 block mt-1">{item.subtitle}</span>
                             )}
@@ -592,7 +592,7 @@ export default function ServicesPage() {
                         <div className="flex items-center gap-3 text-[#433b33]">
                           <span className="w-1.5 h-1.5 rounded-full bg-[#E8531A]" />
                           <div>
-                            <span className="text-sm">{item.title}</span>
+                            <span className="text-sm font-medium">{item.title}</span>
                             {item.subtitle && (
                               <span className="text-xs text-[#433b33]/80 block mt-1">{item.subtitle}</span>
                             )}
