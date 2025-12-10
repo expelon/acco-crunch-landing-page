@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -35,6 +35,8 @@ type Sector = {
   image?: string;
   points: string[];
 };
+
+const MORE_TEXT = 'And many more business sectors';
 
 const sectors: Sector[] = [
   {
@@ -123,6 +125,8 @@ export default function SectorShowcase() {
   const activeIndex = sectors.findIndex((s) => s.key === active.key);
   const isReversed = activeIndex % 2 === 1;
 
+  const words = MORE_TEXT.split(' ');
+
   // Reset image load state when sector changes
   const handleSectorChange = (sector: Sector) => {
     setActive(sector);
@@ -162,7 +166,26 @@ export default function SectorShowcase() {
             );
           })}
         </div>
-        <p className="mt-6 text-center text-sm text-white/70">And many more business sectors</p>
+        <div className="mt-6 flex items-center justify-center gap-2 sm:gap-3 text-base sm:text-lg text-white/80">
+          <span className="inline-flex flex-wrap justify-center gap-x-1">
+            {words.map((word, index) => (
+              <motion.span
+                key={`${word}-${index}`}
+                className="inline-block"
+                animate={{ y: [-10, 0, 0], opacity: [0, 1, 1] }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.18,
+                  repeat: Infinity,
+                  repeatDelay: 2.2,
+                  ease: 'easeOut',
+                }}
+              >
+                {word}
+              </motion.span>
+            ))}
+          </span>
+        </div>
       </div>
 
       {/* Content area */}
