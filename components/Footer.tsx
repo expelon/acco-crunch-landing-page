@@ -72,7 +72,7 @@ export default function Footer() {
           <div className="rounded-2xl bg-white p-6 sm:p-8">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="max-w-[26rem] sm:max-w-[32rem]">
-                <div className="text-xl font-light tracking-[0.02em] text-[#1B263B]">Gain full control over your accounting and strategy.</div>
+                <div className="text-xl font-light tracking-[0.02em] text-[#1B263B]">Strengthen enterprise value through strategic accounting leadership.</div>
               </div>
               <Link href="/contact" className="shrink-0 inline-flex items-center gap-2 bg-[#E8531A] text-white px-4 py-3 rounded-lg hover:bg-[#c74512] w-full sm:w-auto justify-center">
                 Let's get started <ArrowRight size={16} />

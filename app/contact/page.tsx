@@ -23,6 +23,7 @@ export default function ContactPage() {
     'GST & Compliance',
     'Trademark',
     'Partnership Inquiry',
+    'Speak with a Consultant',
     'Internship / Career'
   ];
 
@@ -164,7 +165,7 @@ export default function ContactPage() {
       {/* Feature form section */}
       <section className="py-12 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#1c1a19] rounded-[20px] overflow-hidden p-2 sm:p-3">
+          <div className="bg-[#1c1a19] rounded-[20px] p-2 sm:p-3">
             <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden rounded-[18px]">
             <motion.div
               ref={imgRef}
@@ -211,7 +212,7 @@ export default function ContactPage() {
                     <ChevronDown className={`w-4 h-4 transition-transform ${isServiceDropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
                   {isServiceDropdownOpen && (
-                    <div className="absolute z-10 w-full mt-1 bg-[#151312] rounded-xl border border-transparent focus:border-[#E8531A] overflow-hidden">
+                    <div className="absolute z-20 w-full mt-1 bg-[#151312] rounded-xl border border-transparent focus:border-[#E8531A] overflow-hidden">
                       {services.map((service) => (
                         <button
                           key={service}
