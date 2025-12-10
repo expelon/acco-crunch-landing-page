@@ -37,17 +37,17 @@ export default function Metrics() {
             transition={{ duration: 0.5 }}
             className="text-center md:pr-8"
           >
-            <div className="text-3xl font-bold text-[#E8531A]">5,000+</div>
+            <div className="text-3xl font-bold text-[#E8531A]">16+</div>
             <div className="mt-2 inline-block rounded-xl overflow-hidden bg-white shadow-sm w-[180px] h-[120px]">
               <Image
                 src="/complince.webp"
-                alt="Business compliance filings"
+                alt="Industries we serve"
                 width={180}
                 height={120}
                 className="object-cover w-full h-full"
               />
             </div>
-            <div className="mt-4 text-gray-700">Compliance filings processed</div>
+            <div className="mt-4 text-gray-700">Industries We Serve</div>
           </motion.div>
 
           {/* Item 2 */}

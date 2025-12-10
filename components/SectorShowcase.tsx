@@ -162,6 +162,7 @@ export default function SectorShowcase() {
             );
           })}
         </div>
+        <p className="mt-6 text-center text-sm text-white/70">And many more business sectors</p>
       </div>
 
       {/* Content area */}

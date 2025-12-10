@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, ArrowRight, Linkedin } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -27,6 +27,7 @@ export default function Footer() {
             <a href="https://www.facebook.com/share/17fU596WUK/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-md bg-white/10 flex items-center justify-center hover:bg-white/20"><Facebook size={18} /></a>
             <a href="https://www.instagram.com/accocrunch?igsh=czd5ZDhjZnVnenZ2" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-md bg-white/10 flex items-center justify-center hover:bg-white/20"><Instagram size={18} /></a>
             <a href="https://youtube.com/@accocrunch?si=-XhGEnP_omXkFWn3" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-9 h-9 rounded-md bg-white/10 flex items-center justify-center hover:bg-white/20"><Youtube size={18} /></a>
+            <a href="https://www.linkedin.com/company/accocrunch/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-9 h-9 rounded-md bg-white/10 flex items-center justify-center hover:bg-white/20"><Linkedin size={18} /></a>
             <a href="https://wa.me/message/VSO4AIALEKNCF1" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="w-9 h-9 rounded-md bg-white/10 flex items-center justify-center hover:bg-white/20">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
                 <path d="M20.52 3.48A11.77 11.77 0 0 0 12 0 11.94 11.94 0 0 0 1.6 17.94L0 24l6.2-1.63A11.93 11.93 0 0 0 12 24h.01A12 12 0 0 0 24 12a11.77 11.77 0 0 0-3.48-8.52ZM12 22a9.93 9.93 0 0 1-5.06-1.38l-.36-.21-3.69.97.99-3.6-.23-.37A10 10 0 1 1 22 12a9.9 9.9 0 0 1-10 10Zm5.47-7.55c-.3-.15-1.75-.86-2.02-.95s-.47-.15-.67.15-.77.95-.95 1.15-.35.22-.65.07a8.15 8.15 0 0 1-2.4-1.48 9.03 9.03 0 0 1-1.67-2.07c-.17-.3 0-.46.13-.61.13-.13.3-.35.45-.52.15-.17.25-.33.3-.5a.56.56 0 0 0-.02-.54c-.06-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57a1.1 1.1 0 0 0-.8.38 3.38 3.38 0 0 0-1.06 2.5 5.87 5.87 0 0 0 1.22 3.12c.15.2 2.13 3.24 5.17 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.08 1.75-.72 2-1.4.25-.68.25-1.26.17-1.38-.07-.12-.27-.2-.57-.35Z"/>
