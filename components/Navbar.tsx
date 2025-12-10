@@ -58,7 +58,14 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`w-full z-50 bg-[#f5f1e6] transition-all duration-300`}>
+    <header className="w-full z-50 bg-[#f5f1e6]">
+      <div className="bg-[#FFEB99] text-black py-2 px-4">
+        <div className="container mx-auto text-center text-xs sm:text-sm">
+          Limited slots: Free 30-Minute consultation this week + <Link href="/contact" className="underline hover:no-underline">Join them now!</Link>
+        </div>
+      </div>
+
+      <nav className={`w-full bg-[#f5f1e6] transition-all duration-300`}>
       <div className="container mx-auto px-3 sm:px-4 lg:px-8">
         <div className="flex items-center h-16 sm:h-18 lg:h-20">
           <div className="flex-1">
@@ -155,5 +162,6 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </nav>
+    </header>
   );
 }
