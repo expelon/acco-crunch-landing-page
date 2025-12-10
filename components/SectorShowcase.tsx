@@ -125,8 +125,6 @@ export default function SectorShowcase() {
   const activeIndex = sectors.findIndex((s) => s.key === active.key);
   const isReversed = activeIndex % 2 === 1;
 
-  const words = MORE_TEXT.split(' ');
-
   // Reset image load state when sector changes
   const handleSectorChange = (sector: Sector) => {
     setActive(sector);
@@ -166,25 +164,30 @@ export default function SectorShowcase() {
             );
           })}
         </div>
-        <div className="mt-6 flex items-center justify-center gap-2 sm:gap-3 text-base sm:text-lg text-white/80">
-          <span className="inline-flex flex-wrap justify-center gap-x-1">
-            {words.map((word, index) => (
-              <motion.span
-                key={`${word}-${index}`}
-                className="inline-block"
-                animate={{ y: [-10, 0, 0], opacity: [0, 1, 1] }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.18,
-                  repeat: Infinity,
-                  repeatDelay: 2.2,
-                  ease: 'easeOut',
-                }}
-              >
-                {word}
-              </motion.span>
-            ))}
-          </span>
+        <div className="mt-6 flex flex-wrap justify-center gap-x-4 gap-y-4">
+          <div className="relative px-5 py-2.5 rounded-md text-sm sm:text-base font-medium transition-colors border border-white/10 text-[#f5f1e6] hover:text-[#1B263B] hover:bg-[#FEEA9D] flex items-center gap-2 sm:gap-3">
+            <svg
+              className="w-6 h-6 text-[#E8531A] flex-shrink-0"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 3L4 9l8 12 8-12-8-6Z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M12 3v18M4 9l8 4 8-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeLinejoin="round"
+              />
+            </svg>
+            {MORE_TEXT}
+          </div>
         </div>
       </div>
 
