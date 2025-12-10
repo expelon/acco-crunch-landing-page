@@ -39,6 +39,108 @@ const testimonials = [
     name: 'Riyas',
     company: 'GST Filing',
     review: 'Fast, error-free GST filing every month. Highly reliable partner for compliance.'
+  },
+  {
+    name: 'Manu Krishna',
+    company: 'Company Registration',
+    review:
+      'They simplified the entire incorporation, clarified every compliance point, and delivered everything on schedule. We now operate with complete confidence in our business foundation.'
+  },
+  {
+    name: 'Anjali Mohan',
+    company: 'LLP Registration',
+    review:
+      'Clear guidance, timely updates, and a very professional team. They handled all LLP compliance aspects so I could focus fully on business setup.'
+  },
+  {
+    name: 'Veena Vijayan',
+    company: 'GST & Trademark Services',
+    review:
+      'Our GST and trademark registrations were executed quickly and correctly. Their attention to detail ensured zero errors and a stress-free experience throughout.'
+  },
+  {
+    name: 'Anju P George',
+    company: 'Legal Documentation',
+    review:
+      'They created agreements tailored perfectly to our requirements, not generic templates. Their legal clarity helped us feel protected in every business transaction.'
+  },
+  {
+    name: 'Mathew Biju',
+    company: 'Business Advisory',
+    review:
+      'Their business restructuring advice improved our tax position and operational flexibility. Smart professionals who truly understand business-centric compliance.'
+  },
+  {
+    name: 'Alex K',
+    company: 'Section 8 Company Registration',
+    review:
+      'We received end-to-end support for our Section 8 registration. Their knowledge and documentation quality made the entire journey smooth and compliant.'
+  },
+  {
+    name: 'Venu Gopalakrishnan',
+    company: 'GST Filing',
+    review:
+      'Our monthly GST filings are always accurate and timely. Their proactive support keeps us fully compliant without last-minute stress.'
+  },
+  {
+    name: 'Vishnu VP',
+    company: 'Accounting & MIS Reporting',
+    review:
+      'The MIS reporting gives us complete financial clarity. Their accounting process is organized, transparent, and reliable for quick decision-making.'
+  },
+  {
+    name: 'Ancy C',
+    company: 'Personal Tax Filing',
+    review:
+      'They managed my tax filings professionally and ensured proper documentation. I feel secure having a responsible compliance team supporting me.'
+  },
+  {
+    name: 'Anilkumar CS',
+    company: 'ROC Compliance',
+    review:
+      'With their compliance management, our documents are always updated correctly. We no longer worry about missing statutory deadlines or filings.'
+  },
+  {
+    name: 'Johny Peter',
+    company: 'Virtual CFO Services',
+    review:
+      'Our financial planning and cost control improved significantly. Their virtual CFO guidance adds real value to business operations and growth decisions.'
+  },
+  {
+    name: 'Sabin Thomas',
+    company: 'Corporate Compliance Management',
+    review:
+      'They maintain our entire compliance system with accuracy and consistency. Their process-driven approach builds strong trust and governance.'
+  },
+  {
+    name: 'Rizwan M',
+    company: 'Tax Planning & Advisory',
+    review:
+      'Their tax planning approach is practical, compliant, and financially beneficial. We achieved better savings while maintaining strong statutory discipline.'
+  },
+  {
+    name: 'Mohammad Ijas',
+    company: 'Investor Valuation Support',
+    review:
+      'The valuation and projections they prepared gave investors clear confidence. Their strategic inputs directly supported our funding discussions.'
+  },
+  {
+    name: 'Jishnu RS',
+    company: 'Internal Audit',
+    review:
+      'They identified operational gaps and suggested effective improvements. The review helped us strengthen internal accountability and efficiency.'
+  },
+  {
+    name: 'Rahul Ramachandran',
+    company: 'Financial Modelling',
+    review:
+      'Their financial model was detailed, investor-friendly, and well-structured. It improved our presentation quality and credibility during fundraising.'
+  },
+  {
+    name: 'Venu Thilakan',
+    company: 'Growth Strategy',
+    review:
+      'Their strategic guidance helped us unlock a profitable revenue segment. We now move forward with clearer plans and stronger confidence.'
   }
 ];
 
