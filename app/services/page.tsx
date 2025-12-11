@@ -288,7 +288,7 @@ export default function ServicesPage() {
               viewport={{ once: true }}
             >
               <div className="rounded-xl overflow-hidden shadow-md bg-[#e0d4bf] relative" style={{ aspectRatio: '16/9' }}>
-                <Image src="/service2.webp" alt="Consultation" fill className="object-cover" />
+                <Image src="/last.webp" alt="Consultation" fill className="object-cover" />
               </div>
               <Link
                 href="/contact"
@@ -486,7 +486,7 @@ export default function ServicesPage() {
               <div className="hidden sm:block">
                 <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded overflow-hidden bg-[#3a342f]">
                   <Image
-                    src="/service2.webp"
+                    src="/cta.webp"
                     alt="Custom solution"
                     fill
                     className="object-cover"
@@ -597,7 +597,7 @@ export default function ServicesPage() {
                   className="rounded-xl overflow-hidden shadow-md bg-[#e0d4bf] relative"
                   style={{ aspectRatio: '16/9' }}
                 >
-                  <Image src="/service3.webp" alt="Strategic finance consultation" fill className="object-cover" />
+                  <Image src="/secondservice.webp" alt="Strategic finance consultation" fill className="object-cover" />
                 </div>
                 <Link
                   href="/contact"

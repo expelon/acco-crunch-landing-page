@@ -81,7 +81,7 @@ export default function Footer() {
 
             <div className="mt-8 grid grid-cols-[72px_1fr] sm:grid-cols-[80px_1fr] gap-4 items-start">
               <div className="mt-2 aspect-square rounded-md overflow-hidden bg-[#f5f1e6]">
-                <img src="/card.webp" alt="Office" className="w-full h-full object-cover" />
+                <img src="/office.webp" alt="Office" className="w-full h-full object-cover" />
               </div>
               <div className="mt-2 text-[#1B263B]/80 text-sm leading-relaxed">
                 <div className="flex items-start gap-2 mb-1">

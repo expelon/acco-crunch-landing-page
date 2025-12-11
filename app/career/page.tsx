@@ -351,7 +351,7 @@ export default function CareerPage() {
               <div className="hidden sm:block">
                 <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded overflow-hidden bg-[#3a342f]">
                   <Image
-                    src="/service2.webp"
+                    src="/cta3.webp"
                     alt="Career opportunities"
                     fill
                     className="object-cover"

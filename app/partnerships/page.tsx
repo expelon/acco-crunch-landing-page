@@ -528,7 +528,7 @@ export default function PartnershipsPage() {
             >
               <div className="mt-2 inline-block rounded-xl overflow-hidden bg-white shadow-sm w-[180px] h-[120px]">
                 <Image
-                  src="/partnership1.webp"
+                  src="/m1.webp"
                   alt="Strategic partnerships established"
                   width={180}
                   height={120}
@@ -548,7 +548,7 @@ export default function PartnershipsPage() {
             >
               <div className="mt-2 inline-block rounded-xl overflow-hidden bg-white shadow-sm w-[180px] h-[120px]">
                 <Image
-                  src="/partnership2.jpg"
+                  src="/m2.webp"
                   alt="Clients served through partnerships"
                   width={180}
                   height={120}
@@ -568,7 +568,7 @@ export default function PartnershipsPage() {
             >
               <div className="mt-2 inline-block rounded-xl overflow-hidden bg-white shadow-sm w-[180px] h-[120px]">
                 <Image
-                  src="/partnership3.webp"
+                  src="/m3.webp"
                   alt="Years of partnership excellence"
                   width={180}
                   height={120}
@@ -588,7 +588,7 @@ export default function PartnershipsPage() {
             >
               <div className="mt-2 inline-block rounded-xl overflow-hidden bg-white shadow-sm w-[180px] h-[120px]">
                 <Image
-                  src="/card.webp"
+                  src="/m4.webp"
                   alt="Compliance protocols maintained"
                   width={180}
                   height={120}
@@ -615,7 +615,7 @@ export default function PartnershipsPage() {
               <div className="hidden sm:block">
                 <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded overflow-hidden bg-[#3a342f]">
                   <Image
-                    src="/partnership1.webp"
+                    src="/cta2.webp"
                     alt="Partnership solution"
                     fill
                     className="object-cover"
