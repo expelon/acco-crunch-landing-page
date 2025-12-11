@@ -45,13 +45,7 @@ export default function ServicesShowcase() {
           >
             <motion.div variants={fadeUp} className="max-w-xl mb-8">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light leading-tight text-[#2b2118]">
-                Your business goals,
-                <br className="block sm:hidden" />
-                <span className="sm:whitespace-nowrap">
-                  {' '}Powered by our expert 
-                </span>
-                <br className="block sm:hidden" />
-                {' '}services
+                Your business goals, Powered by our expert services
               </h2>
               <p className="mt-4 text-sm text-[#615b52] opacity-80">
                 From structuring companies to strengthening compliance, we bridge the gap between legal foundations and business performance.
