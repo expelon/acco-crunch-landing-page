@@ -165,7 +165,17 @@ export default function ContactPage() {
       {/* Feature form section */}
       <section className="py-12 bg-[#f5f1e6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#1c1a19] rounded-[20px] p-2 sm:p-3">
+          <form 
+            action="https://formsubmit.co/accocrunch@gmail.com" 
+            method="POST"
+            className="bg-[#1c1a19] rounded-[20px] p-2 sm:p-3"
+          >
+            {/* FormSubmit customization */}
+            <input type="hidden" name="_subject" value="New Contact Form Submission from Acco Crunch Website" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="http://localhost:3000/" />
+            
             <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden rounded-[18px]">
             <motion.div
               ref={imgRef}
@@ -186,20 +196,23 @@ export default function ContactPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
                   type="text"
-                  name="fullName"
+                  name="name"
                   placeholder="Full name"
+                  required
                   className="bg-[#151312] rounded-xl border border-transparent focus:border-[#E8531A] focus:outline-none px-4 py-3 text-sm text-[#f5f1e6] placeholder-[#7f7a74]"
                 />
                 <input
                   type="email"
                   name="email"
                   placeholder="Email address"
+                  required
                   className="bg-[#151312] rounded-xl border border-transparent focus:border-[#E8531A] focus:outline-none px-4 py-3 text-sm text-[#f5f1e6] placeholder-[#7f7a74]"
                 />
                 <input
                   type="tel"
                   name="phone"
                   placeholder="Phone number"
+                  required
                   className="bg-[#151312] rounded-xl border border-transparent focus:border-[#E8531A] focus:outline-none px-4 py-3 text-sm text-[#f5f1e6] placeholder-[#7f7a74]"
                 />
                 <div className="relative">
@@ -228,12 +241,18 @@ export default function ContactPage() {
                       ))}
                     </div>
                   )}
+                  <input
+                    type="hidden"
+                    name="service"
+                    value={selectedService}
+                  />
                 </div>
               </div>
               <textarea
                 name="message"
                 rows={4}
                 placeholder="Message"
+                required
                 className="w-full bg-[#151312] rounded-xl border border-transparent focus:border-[#E8531A] focus:outline-none px-4 py-3 text-sm text-[#f5f1e6] placeholder-[#7f7a74] resize-none"
               />
               <button
@@ -243,7 +262,7 @@ export default function ContactPage() {
                 Submit
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </section>
 
