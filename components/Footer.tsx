@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, ArrowRight, Linkedin } from 'lucide-react';
 
-export default function Footer() {
+export default function Footer({ heading, email }: { heading?: string; email?: string }) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -9,21 +9,21 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Top help bar */}
         <div className="rounded-xl bg-[#2b2420] text-white px-4 sm:px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
-          <h3 className="text-lg sm:text-xl font-light w-full sm:w-auto text-left">
-            How can we help?
+          <h3 className="text-lg sm:text-xl font-light w-full sm:w-auto text-center sm:text-left">
+            {heading || "How can we help?"}
           </h3>
 
           <div className="flex-1 w-full flex justify-center">
             <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-xs sm:text-sm">
               <Link href="/contact" className="hover:text-[#F4C542] whitespace-nowrap">Contact</Link>
-              <a href="mailto:hello.accocrunch@gmail.com" className="hover:text-[#F4C542] break-all sm:break-normal">
-                hello.accocrunch@gmail.com
+              <a href={`mailto:${email || "hello.accocrunch@gmail.com"}`} className="hover:text-[#F4C542] break-all sm:break-normal">
+                {email || "hello.accocrunch@gmail.com"}
               </a>
               <a href="tel:+918089200829" className="hover:text-[#F4C542] whitespace-nowrap">+91 80892 00829</a>
             </div>
           </div>
 
-          <div className="flex items-center gap-2 w-full sm:w-auto justify-start sm:justify-end">
+          <div className="flex items-center gap-2 w-full sm:w-auto justify-center sm:justify-start">
             <a href="https://www.facebook.com/share/17fU596WUK/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-md bg-white/10 flex items-center justify-center hover:bg-white/20"><Facebook size={18} /></a>
             <a href="https://www.instagram.com/accocrunch?igsh=czd5ZDhjZnVnenZ2" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-md bg-white/10 flex items-center justify-center hover:bg-white/20"><Instagram size={18} /></a>
             <a href="https://youtube.com/@accocrunch?si=-XhGEnP_omXkFWn3" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-9 h-9 rounded-md bg-white/10 flex items-center justify-center hover:bg-white/20"><Youtube size={18} /></a>
