@@ -50,9 +50,9 @@ export default function Hero() {
             className="h-auto md:h-[560px] flex flex-col"
           >
             <div className="md:bg-transparent md:shadow-none md:rounded-none bg-[#fdfcf5] rounded-2xl shadow-md px-5 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-10 pb-6 sm:pb-8 mb-0">
-              <h1 className="text-[clamp(2rem,7.2vw,2.75rem)] sm:text-4xl md:text-4xl lg:text-[44px] font-medium text-[#1B263B] leading-tight tracking-wide mb-4">
-                <span className="block lg:hidden whitespace-nowrap">Making every business</span>
-                <span className="block lg:hidden whitespace-nowrap">{'move a\u00A0confident one'}</span>
+              <h1 className="text-[clamp(2rem,7.2vw,2.75rem)] sm:text-4xl md:text-4xl lg:text-[44px] font-medium text-[#1B263B] leading-tight tracking-wide mb-4 break-words">
+                <span className="block lg:hidden">Making every business</span>
+                <span className="block lg:hidden">{'move a\u00A0confident one'}</span>
                 
                 <span className="hidden lg:block lg:mb-2">Making every business</span>
                 <span className="hidden lg:block">move a confident one</span>
