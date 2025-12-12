@@ -5,8 +5,8 @@ import { Poppins } from 'next/font/google';
 const poppins = Poppins({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] });
 
 export const metadata: Metadata = {
-  title: 'Acco Crunch - Business Consulting Excellence',
-  description: 'Transform your business with strategic consulting solutions that drive growth and operational excellence.',
+  title: 'Acco Crunch: Business Registration, Accounting, Tax & Trademark Experts | Kerala',
+  description: 'Acco Crunch supports entrepreneurs with easy company registration, accurate accounting, and dependable compliance solutions for growth.',
   icons: {
     icon: '/logo.png',
   },
