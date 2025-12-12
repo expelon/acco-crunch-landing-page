@@ -347,7 +347,7 @@ export default function CareerPage() {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <div className="flex items-center gap-4 sm:gap-6 bg-[#2a2622] rounded-lg px-3 sm:px-4 lg:px-6 py-3 sm:py-4 shadow-md">
+            <div className="flex flex-col sm:flex-row sm:items-center items-stretch gap-3 sm:gap-6 bg-[#2a2622] rounded-lg px-4 sm:px-4 lg:px-6 py-4 sm:py-4 shadow-md">
               <div className="hidden sm:block">
                 <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded overflow-hidden bg-[#3a342f]">
                   <Image
@@ -363,12 +363,12 @@ export default function CareerPage() {
                 We always strive to make a positive difference in everything. If that's important to you, Acco Crunch would be a good fit.
               </div>
 
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 w-full sm:w-auto">
                 <Link
                   href="https://www.linkedin.com/company/77721026/admin/posted-jobs/open/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-md bg-[#E8531A] px-4 sm:px-5 py-2 text-xs sm:text-sm font-medium text-white shadow-sm hover:bg-[#cf4510] transition-colors whitespace-nowrap"
+                  className="inline-flex items-center justify-center rounded-md bg-[#E8531A] px-4 sm:px-5 py-2 text-xs sm:text-sm font-medium text-white shadow-sm hover:bg-[#cf4510] transition-colors whitespace-nowrap w-full sm:w-auto"
                 >
                   Current openings
                   <ArrowRight className="ml-2 w-4 h-4" />
