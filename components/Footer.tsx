@@ -14,7 +14,7 @@ export default function Footer({ heading, email }: { heading?: string; email?: s
           </h3>
 
           <div className="flex-1 w-full flex justify-center">
-            <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-xs sm:text-sm">
+            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-xs sm:text-sm">
               <Link href="/contact" className="hover:text-[#F4C542] whitespace-nowrap">Contact</Link>
               <a href={`mailto:${email || "hello.accocrunch@gmail.com"}`} className="hover:text-[#F4C542] break-all sm:break-normal">
                 {email || "hello.accocrunch@gmail.com"}
