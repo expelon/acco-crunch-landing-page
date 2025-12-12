@@ -19,7 +19,9 @@ export default function ConsultCta() {
           <div className="rounded-xl border border-[#e3ddcf] bg-[#f9f4e9] px-6 sm:px-8 py-8 sm:py-10 flex flex-col justify-between min-h-[150px]">
             <div className="text-sm sm:text-base text-[#1B263B]">Book a Consultation</div>
             <Link
-              href="/contact"
+              href="https://calendly.com/accocrunch"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-6 text-sm sm:text-base text-[#E8531A] underline underline-offset-2 decoration-[#E8531A] hover:opacity-80"
             >
               Schedule now

@@ -22,7 +22,9 @@ export default function HomeConsultCta() {
               <div className="rounded-lg border border-white/25 px-4 sm:px-6 lg:px-8 py-6 sm:py-7 lg:py-9 flex flex-col justify-between min-h-[180px] sm:min-h-[200px] lg:min-h-[220px]">
                 <div className="text-base sm:text-lg lg:text-xl font-normal leading-snug text-[#f5f1e6]">Book a Consultation</div>
                 <Link
-                  href="/contact"
+                  href="https://calendly.com/accocrunch"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-8 text-sm sm:text-base text-[#E8531A] underline underline-offset-4 decoration-[#E8531A] hover:opacity-80"
                 >
                   Schedule now
