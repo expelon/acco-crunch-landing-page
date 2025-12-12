@@ -379,7 +379,7 @@ export default function CareerPage() {
         </div>
       </section>
 
-      <Footer heading="Let our team be your new team" email="career.accocrunch@gmail.com" />
+      <Footer heading="Let Our Team Be Your New Team" email="career.accocrunch@gmail.com" />
     </div>
   );
 }
