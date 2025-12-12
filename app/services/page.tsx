@@ -791,24 +791,21 @@ export default function ServicesPage() {
         <div className="container mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-light text-[#1B263B]">
-              Choose the right package for your growth
+              Choose the right package for<br />your start
             </h2>
-            <p className="mt-3 text-xs sm:text-sm text-[#433b33] opacity-80 max-w-2xl mx-auto">
-              Flexible plans designed for different stages of your business journey – from early setup to growth and advanced scale.
-            </p>
-          </div>
+                      </div>
 
           <div className="mt-10 grid gap-6 sm:gap-7 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {/* Starter plan */}
             <div className="rounded-2xl bg-[#faf7f0] border border-[#e3ddcf] shadow-sm px-6 py-7 flex flex-col h-full text-left">
               <div className="flex items-start gap-3 mb-5">
-                <div className="w-9 h-9 rounded-lg bg-[#f0e6d5] flex items-center justify-center">
-                  <Shield className="w-5 h-5 text-[#E8531A]" />
+                <div className="w-12 h-12 shrink-0 rounded-lg bg-[#f0e6d5] flex items-center justify-center">
+                  <Shield className="w-6 h-6 text-[#E8531A]" />
                 </div>
                 <div>
-                  <h3 className="text-base sm:text-lg font-medium text-[#1B263B]">Foundation Suite</h3>
-                  <p className="text-xs sm:text-sm text-[#433b33] opacity-80 mt-1">
-                    Perfect for startups and small businesses.
+                  <h3 className="text-lg sm:text-xl font-medium text-[#1B263B]">Foundation Suite</h3>
+                  <p className="text-xs sm:text-sm text-[#433b33] opacity-80 mt-1 leading-tight">
+                    Perfect for Self-employed professionals,<br />small retail businesses, service freelancers, creators.
                   </p>
                 </div>
               </div>
@@ -865,13 +862,13 @@ export default function ServicesPage() {
             {/* Growth plan */}
             <div className="rounded-2xl bg-[#faf7f0] border border-[#e3ddcf] shadow-sm px-6 py-7 flex flex-col h-full text-left">
               <div className="flex items-start gap-3 mb-5 mt-1">
-                <div className="w-9 h-9 rounded-lg bg-[#f0e6d5] flex items-center justify-center">
-                  <TrendingUp className="w-5 h-5 text-[#E8531A]" />
+                <div className="w-12 h-12 shrink-0 rounded-lg bg-[#f0e6d5] flex items-center justify-center">
+                  <TrendingUp className="w-6 h-6 text-[#E8531A]" />
                 </div>
                 <div>
-                  <h3 className="text-base sm:text-lg font-medium text-[#1B263B]">Professional Suite</h3>
+                  <h3 className="text-lg sm:text-xl font-medium text-[#1B263B]">Professional Suite</h3>
                   <p className="text-xs sm:text-sm text-[#433b33] opacity-80 mt-1">
-                    Designed for growing companies.
+                    Perfect for partnership firms, consultancy teams, professional service firms, and growing LLPs.
                   </p>
                 </div>
               </div>
@@ -929,12 +926,15 @@ export default function ServicesPage() {
             {/* Enterprise plan */}
             <div className="rounded-2xl bg-[#faf7f0] border border-[#e3ddcf] shadow-sm px-6 py-7 flex flex-col h-full text-left">
               <div className="flex items-start gap-3 mb-5">
-                <div className="w-9 h-9 rounded-lg bg-[#f0e6d5] flex items-center justify-center">
-                  <Target className="w-5 h-5 text-[#E8531A]" />
+                <div className="w-12 h-12 shrink-0 rounded-lg bg-[#f0e6d5] flex items-center justify-center">
+                  <Target className="w-6 h-6 text-[#E8531A]" />
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg font-medium text-[#1B263B]">Executive Suite</h3>
-                  <p className="text-xs sm:text-sm text-[#433b33] opacity-80 mt-1">Tailored solutions for enterprises.</p>
+                  <p className="text-xs sm:text-sm text-[#433b33] opacity-80 mt-1 leading-tight">
+                    Perfect for startups, VC/Angel-backed companies, SMEs evolving into corporate<br />
+                    structures, Section 8 NGOs needing strong governance.
+                  </p>
                 </div>
               </div>
 
