@@ -162,7 +162,7 @@ export default function Home() {
                 className="relative w-full h-[220px] sm:h-[320px] lg:h-[420px]"
                 style={{ scale: imgScale }}
               >
-                <Image src="/card.webp" alt="Team collaboration" fill className="object-cover" />
+                <Image src="/trial2.webp" alt="Team collaboration" fill className="object-cover" />
               </motion.div>
             </div>
 

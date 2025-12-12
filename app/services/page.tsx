@@ -998,7 +998,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Additional payroll management row under packages */}
-        <div className="mt-8 max-w-5xl mx-auto">
+        <div className="mt-8 max-w-5xl mx-auto px-6 sm:px-0">
           <div className="rounded-2xl bg-[#ece6d7] px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 shadow-sm">
             <div className="flex items-start sm:items-center gap-3 flex-1 min-w-0">
               <svg

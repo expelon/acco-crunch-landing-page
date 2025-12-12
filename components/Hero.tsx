@@ -50,9 +50,13 @@ export default function Hero() {
             className="h-auto md:h-[560px] flex flex-col"
           >
             <div className="md:bg-transparent md:shadow-none md:rounded-none bg-[#fdfcf5] rounded-2xl shadow-md px-5 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-10 pb-6 sm:pb-8 mb-0">
-              <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-medium text-[#1B263B] leading-tight tracking-wide mb-4">
-                <span className="block lg:mb-2">Making every business</span>
-                <span className="block">move a confident one</span>
+              <h1 className="text-4xl sm:text-4xl md:text-4xl lg:text-[44px] font-medium text-[#1B263B] leading-tight tracking-wide mb-4">
+                <span className="block lg:hidden">Making every</span>
+                <span className="block lg:hidden">business move a</span>
+                <span className="block lg:hidden">confident one</span>
+                
+                <span className="hidden lg:block lg:mb-2">Making every business</span>
+                <span className="hidden lg:block">move a confident one</span>
               </h1>
               <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-2xl lg:max-w-xl xl:max-w-lg text-left">
                 End-to-end Business Registration, Tax Advisory, Compliance & Legal Support for Startups,
