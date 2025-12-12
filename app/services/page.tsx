@@ -173,6 +173,40 @@ const industries = [
   'Professional Services',
 ];
 
+const insightsPreviewPosts = [
+  {
+    slug: 'indias-net-direct-tax-collection-fy26',
+    title: "India's Net Direct Tax Collection Up 7% in FY 26 — What It Means for Taxpayers & Businesses",
+    category: 'Accounting Tips',
+    date: 'July 26, 2025',
+    description:
+      "India's net direct tax collection for FY 2025–26 reached Rs. 12.92 trillion, up 7% from last year. Here's what the 18% dip in refunds and 8.7% rise in non-corporate taxes mean for taxpayers and businesses.",
+    image: '/first.webp',
+    featured: true,
+  },
+  {
+    slug: 'gst-2-0-simplified-registration-small-businesses',
+    title: 'GST 2.0 — Simplified Registration & What It Means for Small Businesses',
+    category: 'Business strategy',
+    date: 'July 18, 2025',
+    image: '/second.webp',
+  },
+  {
+    slug: 'gst-rate-overhaul-new-slabs-impact',
+    title: 'GST Rate Overhaul — Understanding of New Slabs & Impact on Consumers & Businesses',
+    category: 'Compliance',
+    date: 'July 18, 2025',
+    image: '/three.webp',
+  },
+  {
+    slug: 'growing-demand-cfo-financial-advisory-services-2025-26',
+    title: 'The Growing Demand for CFO & Financial Advisory Services — What Current Macroeconomic Conditions Signal for 2025–26',
+    category: 'Growth',
+    date: 'July 18, 2025',
+    image: '/twelve.webp',
+  },
+];
+
 export default function ServicesPage() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
@@ -1097,6 +1131,89 @@ export default function ServicesPage() {
                     "{testimonials[currentTestimonial].review}"
                   </h3>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Insights & Expertise Section */}
+      <section className="py-8 sm:py-12 bg-[#f5f1e6]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-xl sm:text-2xl lg:text-3xl font-light text-[#1B263B] text-center lg:text-left"
+          >
+            Insights & expertise to power your business
+          </motion.h2>
+
+          <div className="mt-8">
+            <div className="grid gap-2">
+              <Link
+                href={`/insights/${insightsPreviewPosts[0].slug}`}
+                className="rounded-xl bg-white shadow-sm border border-black/5 overflow-hidden grid grid-cols-1 lg:grid-cols-2"
+              >
+                <div className="p-6 sm:p-8 flex flex-col">
+                  <div className="flex items-center gap-3 text-[11px] sm:text-xs tracking-wide">
+                    <span className="text-[#E8531A]">{insightsPreviewPosts[0].category}</span>
+                    <span className="text-[#7b6a59]">{insightsPreviewPosts[0].date}</span>
+                  </div>
+
+                  <div className="mt-4 h-px bg-black/10" />
+
+                  <div className="mt-5">
+                    <span className="inline-flex items-center rounded-md bg-[#FFEB99] px-3 py-1 text-[11px] font-medium text-[#1f1c19]">
+                      Featured blog
+                    </span>
+                  </div>
+
+                  <h3 className="mt-5 text-xl sm:text-2xl font-medium text-[#E8531A] leading-snug">
+                    {insightsPreviewPosts[0].title}
+                  </h3>
+                  <p className="mt-3 text-sm sm:text-base text-[#433b33] leading-relaxed max-w-xl">
+                    {insightsPreviewPosts[0].description}
+                  </p>
+
+                  <div className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#E8531A]">
+                    View more
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </div>
+
+                <div className="relative min-h-[240px] sm:min-h-[320px] lg:min-h-full bg-white p-2">
+                  <div className="relative w-full h-full overflow-hidden rounded-lg">
+                    <Image
+                      src={insightsPreviewPosts[0].image}
+                      alt={insightsPreviewPosts[0].title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </Link>
+
+              <div className="grid gap-2 lg:grid-cols-3">
+                {insightsPreviewPosts.slice(1).map((post) => (
+                  <Link
+                    key={post.slug}
+                    href={`/insights/${post.slug}`}
+                    className="rounded-xl bg-white shadow-sm border border-black/5 overflow-hidden p-6 sm:p-7 flex flex-col"
+                  >
+                    <div className="flex items-center gap-3 text-[11px] sm:text-xs tracking-wide">
+                      <span className="text-[#E8531A]">{post.category}</span>
+                      <span className="text-[#7b6a59]">{post.date}</span>
+                    </div>
+
+                    <div className="mt-4 h-px bg-black/10" />
+
+                    <h3 className="mt-6 text-lg sm:text-xl font-medium text-[#1B263B] leading-snug">
+                      {post.title}
+                    </h3>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
