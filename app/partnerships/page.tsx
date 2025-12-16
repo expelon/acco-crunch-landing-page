@@ -76,7 +76,7 @@ export default function PartnershipsPage() {
                 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#1B263B] tracking-normal leading-snug lg:leading-tight mb-8"
               >
                 Collaboration that strengthens
-                <br className="hidden sm:block" />
+                <br className="block sm:hidden" />
                 services and client satisfaction
               </motion.h1>
 
