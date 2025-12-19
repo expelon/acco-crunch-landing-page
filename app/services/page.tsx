@@ -490,17 +490,19 @@ export default function ServicesPage() {
                   />
                 </svg>
                 <p className="text-sm sm:text-base text-[#1B263B]">
-                  Payroll Management – ₹139/month per 10 employees
+                  Virtual CFO Services for SMEs – ₹4500 Onwards
                 </p>
               </div>
 
-              <Link
-                href="/contact"
+              <a
+                href="https://wa.me/message/VSO4AIALEKNCF1"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-lg bg-white text-[#1B263B] text-xs sm:text-sm font-medium px-4 py-2.5 shadow-sm hover:bg-[#f5f1e6] transition-colors whitespace-nowrap"
               >
-                Contact to sales
+                Contact sales
                 <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
